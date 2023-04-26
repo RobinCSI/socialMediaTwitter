@@ -8,7 +8,9 @@ function App() {
 
   return (
     <>
-      <div></div>
+      <div>
+        <h1>Twitter clone</h1>
+      </div>
     </>
   )
 }
