@@ -12,6 +12,9 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+
+ 
+
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.12.2",
@@ -21,6 +24,7 @@
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.10.0",
     "styled-components": "^5.3.10"
+
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
