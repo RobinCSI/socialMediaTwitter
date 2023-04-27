@@ -7,31 +7,49 @@ import { BsTwitter } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
 import { BsApple } from 'react-icons/bs';
 
+import IconButton from '@mui/material/IconButton';
+import FilledInput from '@mui/material/FilledInput';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormControl from '@mui/material/FormControl';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { Password } from '@mui/icons-material';
 
 const Login = () => {
     const[data,setData]=useState([])
     const[firstInput,setFirstInput]=useState('')
     const[show,setShow]=useState(false)
+    const[password,setPassword]=useState("")
+   
+     //this state for password show and hide
+
+     const [showPassword, setShowPassword] = React.useState(false);
+
 const userData=[
     {
         name:"Rishi",
         email:"rishi@gmail.com",
-        phnNO:"12345678"
+        phnNO:"12345678",
+        password:"Rishi@123"
     },
     {
         name:"Ravi",
         email:"ravi@gmail.com",
-        phnNO:"2345678"
+        phnNO:"2345678",
+        password:"Ravi@123"
     },
     {
         name:"Rahul",
         email:"rahul@gmail.com",
-        phnNO:"345678"
+        phnNO:"345678",
+        password:"Rahul@123"
     },
     {
         name:"Robin",
         email:"robin@gmail.com",
-        phnNO:"5678"
+        phnNO:"5678",
+        password:"Robin@123"
     },
 ]
 
@@ -68,6 +86,25 @@ useEffect(()=>{
      }
   }
 
+  function handlePasswordSumbit(e){
+     e.preventDefault()
+     const findUser=data.find((user)=>{
+      return(
+          user.name===firstInput ||  user.email===firstInput || user.phnNO===firstInput
+      )
+  })
+    if(findUser.password===password){
+      alert("succes Fully loged in")
+    }
+    else{
+      alert("please fill the correct Password")
+    }
+  }
+
+  //this fu ctions are for password toggle
+
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
+ 
   return (
     <div>
       {
@@ -133,6 +170,7 @@ useEffect(()=>{
      </form>
         :
         <div>
+          <form  onSubmit={handlePasswordSumbit}>
         <Box
           sx={{
             width: 400,
@@ -146,25 +184,45 @@ useEffect(()=>{
          <div>
          <h1 className={style.heading}>Sign in to twitter</h1>
          </div>
-         <div>
-         <TextField
-          id="filled-basic"
-          // label="Phone,email, or username"
-          value={firstInput}
-          variant="filled" 
-          />
+         <div> 
+         <TextField id="outlined-basic" value={firstInput} variant="outlined" />
          </div>
          <div>
-         <TextField
-          id="filled-basic"
-          label="Phone,email, or username"
-          variant="filled" 
+          <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+             <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
+             <FilledInput
+             onChange={(e)=>setPassword(e.target.value)}
+             id="filled-adornment-password"
+             type={showPassword ? 'text' : 'password'}
+             endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  // onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
           />
+        </FormControl>
+
          </div>
           <div>
             <p>Don't have an account? Sign up</p>
           </div>
+          <div>
+              <Button variant="contained" type='submit' sx={{
+                 backgroundColor:'white',
+                 color: 'black',
+                 }}>
+                 Next
+              </Button>
+          </div>
          </Box>
+         </form>
         </div>
       }
    
