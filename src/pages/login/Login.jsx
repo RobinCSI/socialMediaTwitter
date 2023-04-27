@@ -1,6 +1,6 @@
 
 import React,{useEffect,useState} from 'react'
-import  {Button, TextField}  from '@mui/material'
+import  {Alert, Button, TextField}  from '@mui/material'
 import Box from '@mui/material/Box';
 import style from "./Login.module.css"
 import { BsTwitter } from 'react-icons/bs';
@@ -16,6 +16,8 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { Password } from '@mui/icons-material';
 
+import { Snackbar } from '@mui/base';
+
 const Login = () => {
     const[data,setData]=useState([])
     const[firstInput,setFirstInput]=useState('')
@@ -23,8 +25,10 @@ const Login = () => {
     const[password,setPassword]=useState("")
    
      //this state for password show and hide
-
      const [showPassword, setShowPassword] = React.useState(false);
+
+    // This state is for snackBar
+    const[open,setOpen]=useState(false)
 
 const userData=[
     {
@@ -94,19 +98,26 @@ useEffect(()=>{
       )
   })
     if(findUser.password===password){
-      alert("succes Fully loged in")
+      // alert("succes Fully loged in")
+      setOpen(true)
+    
     }
     else{
       alert("please fill the correct Password")
     }
   }
 
-  //this fu ctions are for password toggle
-
+  //this funtions are for password toggle
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  // This function is for Cloging snackbar
+  function handleClose(){
+    setOpen(false)
+  }
  
   return (
     <div>
+        
       {
         !show? 
         <form  onSubmit={handleSubmit}>
@@ -225,7 +236,12 @@ useEffect(()=>{
          </form>
         </div>
       }
-   
+       
+       <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          Succesfully Logged in...
+       </Alert>
+      </Snackbar>
     
     </div>
   )
