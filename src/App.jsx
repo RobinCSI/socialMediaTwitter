@@ -9,6 +9,7 @@ import NavBar from './pages/Navbar'
 
 
 import Logins from './pages/Login/login'
+
 function App() {
  
 
