@@ -73,7 +73,7 @@ span:hover{
    background-color: rgb(29, 155, 240);
    color: white;
    position: fixed;
-
+ z-index: 99;
 }
 
 .navLink{
@@ -81,7 +81,7 @@ span:hover{
    
    
     color: white;
-    border-radius: 50px;
+    border-radius: 100px;
     width: 85px;
     height: 35px;
     text-align: center;
@@ -106,6 +106,7 @@ span:hover{
 
 .textNavbar{
     margin-left: 22%;
+    margin-top: 1%;
    
    
 }
@@ -116,7 +117,7 @@ span:hover{
     top:15px;
     
   
-    width: 220px;
+    width: 250px;
     display: flex;
    
     justify-content: space-evenly;
