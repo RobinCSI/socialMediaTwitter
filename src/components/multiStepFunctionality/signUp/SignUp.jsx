@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import UserDetails from '../userDetails/UserDetails'
-import Privacy from '../privacy/Privacy'
+import Privacy from '../../privacy/Privacy'
 import Validation from '../validation/Validation'
 
 const SignUp = () => {
