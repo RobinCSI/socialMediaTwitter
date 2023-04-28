@@ -5,7 +5,10 @@
     margin: 3%;
     padding: 4%;
 }
-
+.menu:hover{
+    background-color: #bdc3c7;
+    border-radius: 50px;
+}
 .btn{
     color: black;
     padding: 1%;
