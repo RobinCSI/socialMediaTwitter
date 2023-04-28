@@ -1,0 +1,10 @@
+.avtar {
+  display: flex;
+  
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+ 
+  box-shadow: rgb(red, green, blue);
+}
+
