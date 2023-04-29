@@ -23,11 +23,11 @@ function UserData() {
       <Box
         sx={{
           
-          backgroundColor: "rgb(247, 249, 249)",
-
+          backgroundColor: "lightgray",
+           width: 300,
           borderRadius: 5,
-          transform: "translate(240%, 120%)",
-          border: "1px solid red",
+          transform: "translate(200%, 180%)",
+          
         }}
       >
         <h3 className="h3">Who To Follow</h3>

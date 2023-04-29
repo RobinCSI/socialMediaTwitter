@@ -18,7 +18,7 @@ function SingleUser(props) {
           color: "black",
           textTransform: "none",
           borderRadius: 50,
-         border:"none"
+         border: "1px solid black",
         }}
         variant="outlined"
       >

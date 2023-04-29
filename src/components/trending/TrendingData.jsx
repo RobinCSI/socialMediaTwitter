@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box } from "@mui/material";
 import TrendingSingle from "./TrendingSingle";
+import style from "./Trending.module.css";
 function TrendingData() {
   const userData = [
     { id: 1, name: "Trending", designation: "Brahmin", count: "12k tweets" },
@@ -25,22 +26,27 @@ function TrendingData() {
   ];
   let [tweetData, setTweetData] = useState(userData);
   return (
-    <div>
+    <div className={style.main}>
       <Box
         sx={{
           width: 300,
-          height: 300,
-          backgroundColor: "white",
+         
+          backgroundColor: "lightgray",
 
           borderRadius: 5,
           transform: "translate(300%, 20%)",
-          border: "1px solid red",
+         
         }}
       >
-        <h2>What's happening</h2>
-        <div>
-            <p>worriors at king</p>
-            <img src="https://paige-photography.com/wp-content/uploads/2020/05/HY7A2666-1024x819.jpg" width="100px"/>
+        <h2 className={style.heading}>What's happening</h2>
+        <div className={style.imageDiv}>
+          <p className={style.p}>worriors at king</p>
+          <img
+            className={style.image}
+            src="https://paige-photography.com/wp-content/uploads/2020/05/HY7A2666-1024x819.jpg"
+            width="60px"
+            height="60px"
+          />
         </div>
         {tweetData.map((curentData, index) => {
           return (
@@ -48,10 +54,9 @@ function TrendingData() {
               <TrendingSingle
                 key={curentData.id}
                 trend={curentData.name}
-                designation={curentData.designation}
+                desg={curentData.designation}
                 tweets={curentData.count}
               />
-              
             </>
           );
         })}
