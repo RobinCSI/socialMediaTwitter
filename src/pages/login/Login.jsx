@@ -9,12 +9,13 @@ import Icons from "../../components/Icons";
 import UiPart from "../../components/UiPart";
 import { ImCross } from "react-icons/im";
 import NormalButton from "../../components/NormalButton";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 const Login = () => {
   const [data, setData] = useState([]);
   const [firstInput, setFirstInput] = useState("");
   const [show, setShow] = useState(false);
   const [showForm, setShowForm] = useState(true);
+  const navigate = useNavigate();
   const userData = [
     {
       name: "Rishi",
@@ -70,6 +71,7 @@ const Login = () => {
   }
   function handleForm() {
     setShowForm(false);
+    navigate("/");
   }
   return (
     <div>

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./User.css";
-import { Button,Box } from "@mui/material";
+import { Button, Box } from "@mui/material";
 import SingleUser from "./SingleUser";
 function UserData() {
   let [userData, setUserData] = useState([]);
+  let [displayCount, setDisplayCount] = useState(3);
+  let userDetails = userData.slice(0, displayCount);
   const getData = () => {
     fetch("/users.json")
       .then((response) => response.json())
@@ -18,24 +20,18 @@ function UserData() {
   }, []);
   return (
     <div>
-      {/* {userData.map((currentEle, index) => {
-        return (
-          <> */}
       <Box
         sx={{
-          width: 300,
-          height: 600,
-          backgroundColor: "lightgray",
-          // "&:hover": {
-          //   backgroundColor: "initial",
-          //   opacity: [0.9, 0.8, 0.7],
-          // },
+          
+          backgroundColor: "rgb(247, 249, 249)",
+
           borderRadius: 5,
-          transform: "translate(300%, 50%)",
+          transform: "translate(240%, 120%)",
           border: "1px solid red",
         }}
       >
-        {userData.map((currentEle, index) => {
+        <h3 className="h3">Who To Follow</h3>
+        {userDetails.map((currentEle, index) => {
           return (
             <>
               <SingleUser
@@ -47,19 +43,24 @@ function UserData() {
             </>
           );
         })}
-      </Box>
 
-      {/* <div className="avtar">
-              <img
-                src={currentEle.avatar_url}
-                alt={currentEle.first_name}
-                style={{ width: "90px", height: "90px" }}
-              />
-              <div key={currentEle.user_id}>{currentEle.first_name}</div>
-              <Button sx={{
-                height: 30
-              }} variant="outlined">Follow</Button>
-            </div> */}
+        <Button
+          sx={{
+            borderRadius: 50,
+            border: "none",
+            textTransform: "none",
+            fontSize: 17,
+            "&:hover": {
+              backgroundColor: "transparent",
+              border: "none",
+            },
+          }}
+          onClick={() => setDisplayCount(userData.length)}
+          variant="outlined"
+        >
+          Show More
+        </Button>
+      </Box>
     </div>
   );
 }
