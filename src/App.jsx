@@ -1,36 +1,44 @@
+import { useState } from "react";
 
-import './App.css'
-import { Route, Router, Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import NavBar from './pages/Navbar'
-
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import SignUpInitial from "./pages/SignUpInitial";
+import Register from "./pages/Register";
+import NavBar from "./pages/Navbar";
 import Layout from "./components/layout/Layout";
-
-
-import Logins from './pages/Login/login'
+import Logins from "./pages/Login/login";
+import UserData from "./components/userData/UserData";
 
 function App() {
- 
-
   return (
     <>
-
       <div>
-      <Layout/>
-        <NavBar/>
+        <Layout />
+
+        <NavBar />
       </div>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Layout><Login/></Layout>}/>
-        <Route path="/register" element={<Layout><Register/></Layout>}/>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/login"
+          element={
+            <Layout>
+              <Logins />
+            </Layout>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <Layout>
+              <SignUpInitial />
+            </Layout>
+          }
+        />
       </Routes>
-
-    <Logins/>
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,12 +1,14 @@
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import Buttons from "../components/Button";
-
+import Sidebar from "../components/sideBar/Sidebar";
+import UserData from "../components/userData/UserData";
+import "./Home.css";
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-      <Buttons texts="Sign up with Google" icon={<FcGoogle/>} />
+    <div className="home">
+      {/* <Sidebar />
+      <UserData /> */}
     </div>
   );
 }
