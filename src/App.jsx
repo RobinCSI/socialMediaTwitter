@@ -18,7 +18,7 @@ function App() {
     <>
 
       <div>
-      
+      <Layout/>
         <NavBar/>
       </div>
       <Routes>
