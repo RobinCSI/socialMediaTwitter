@@ -6,7 +6,7 @@ import { ImCross } from "react-icons/im";
 import style from "./Signup.module.css";
 
 import { Button, Box } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Icons from "../../components/smallComponents/Icons";
 import UiPart from "../../components/smallComponents/UiPart";
 import NormalButton from "../../components/smallComponents/NormalButton";
@@ -47,7 +47,7 @@ function SignUpInitial() {
           <UiPart title="Join Twitter today" />
           <div className="hrr">or</div>
 
-          <NormalButton name="create account" />
+         <Link to='/register'><NormalButton name="create account" /></Link> 
           <div>
             <p>
               By signing up, you agree to the<span>Terms of Service</span>

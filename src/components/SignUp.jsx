@@ -2,17 +2,19 @@ import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import Styles from "./SignUp.module.css";
 import {
+  Alert,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
+  Snackbar,
   TextField,
 } from "@mui/material";
 import { green, grey, red } from "@mui/material/colors";
 import { useState } from "react";
 import { Button } from "@mui/base";
 import { func } from "prop-types";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
   let months = [
@@ -50,6 +52,9 @@ export default function SignUp() {
   const [errors, setErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate()
+  const [data, setData] = useState([]);
+  // const [open, setOpen] = useState(false);
 
   function handlechange(e) {
     const { name, value } = e.target;
@@ -61,19 +66,34 @@ export default function SignUp() {
   function handleToggle() {
     setToggle(!toggle);
   }
+  // function handleClose() {
+  //   setOpen(false);
+  // }
 
   function handleSubmit(e) {
     e.preventDefault();
     setIsSubmit(true);
     setErrors(validation(details));
+
   }
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmit) {
-      localStorage.setItem("users", JSON.stringify(details));
-      setDetails(initialData)
+      localStorage.setItem("users", JSON.stringify([...data,details]));
+      setDetails(initialData);
+      
+      navigate('/')
     }
   }, [errors]);
+
+  useEffect(() => {
+    const dataFromLocal = localStorage.getItem("users");
+    if (dataFromLocal) {
+      setData(JSON.parse(dataFromLocal));
+    } else {
+      setData([]);
+    }
+  }, []);
 
   function validation(details) {
     let warnings = {};
@@ -108,16 +128,21 @@ export default function SignUp() {
   console.log(errors);
   console.log(toggle);
   return (
-    <div>
+    <div style={{margin:'50px'}}>
       <Box
         sx={{
-          paddingRight: "80px",
-          paddingLeft: "80px",
-          //  width: 600,
+          paddingRight: "40px",
+          paddingLeft: "40px",
+           width: 600,
           height: 647,
           backgroundColor: "white",
           borderRadius: 5,
           borderColor: "black",
+          // maxWidth: "1280px",
+          margin: "0 auto",
+          padding: "2rem",
+          textAlign: "center",
+          border:'1px solid #dadce0'
         }}
       >
         <FormControl type="submit">
@@ -236,7 +261,7 @@ export default function SignUp() {
               value={details.year}
               name="year"
               onChange={handlechange}
-              sx={{ width: 100,height:'100' }}
+              sx={{ width: 100, height: "100" }}
               label="Years"
               select
             >
@@ -267,6 +292,9 @@ export default function SignUp() {
               marginTop: "80px",
               padding: "15px",
               borderRadius: "25px",
+              color:'white',
+              backgroundColor:'black',
+              cursor:'pointer'
             }}
             onClick={handleSubmit}
           >
@@ -274,6 +302,11 @@ export default function SignUp() {
           </Button>
         </FormControl>
       </Box>
+      {/* <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
+          Succesfully Logged in...
+        </Alert>
+      </Snackbar> */}
     </div>
   );
 }
