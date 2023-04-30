@@ -7,8 +7,12 @@ import SignUpInitial from "./pages/signup/SignUpInitial";
 
 import NavBar from "./pages/navbar/Navbar";
 
+
+
+
+
 import Logins from "./pages/Login/login";
-import UserData from "./components/userData/UserData";
+
 function App() {
   return (
     <>
@@ -20,8 +24,6 @@ function App() {
         <Route path="/login" element={<Logins />} />
         <Route path="/signup" element={<SignUpInitial />} />
       </Routes>
-
-      {/* <Logins/> */}
     </>
   );
 }
