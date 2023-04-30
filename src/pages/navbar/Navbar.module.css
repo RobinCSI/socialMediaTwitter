@@ -1,0 +1,60 @@
+.navbar {
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(29, 155, 240);
+  color: white;
+  position: fixed;
+  z-index: 99;
+}
+
+.navLink {
+  border: 1px solid rgb(162, 200, 238);
+
+  color: white;
+  border-radius: 100px;
+  width: 85px;
+  height: 35px;
+  text-align: center;
+  padding: 1%;
+  font-size: 20px;
+}
+.navLink:hover {
+  color: white;
+  background-color: lightblue;
+  opacity: 0.3;
+}
+.navLink:nth-child(2n) {
+  background-color: white;
+  color: black;
+}
+
+.msg {
+  color: white;
+  text-decoration: none;
+}
+
+.textNavbar {
+  margin-left: 22%;
+  margin-top: 1%;
+}
+
+.yellow {
+  position: absolute;
+  right: 150px;
+  top: 15px;
+
+  width: 250px;
+  display: flex;
+
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 890px) {
+  .textNavbar {
+    display: none;
+  }
+}

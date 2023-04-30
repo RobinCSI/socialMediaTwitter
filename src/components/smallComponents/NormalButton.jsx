@@ -19,6 +19,7 @@ function NormalButton(props) {
             "&:hover": {
               backgroundColor: "initial",
               color: "initial",
+              border: "1px solid #dadce0",
             },
           }}
           variant="outlined"

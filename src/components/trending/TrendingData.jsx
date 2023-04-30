@@ -31,10 +31,11 @@ function TrendingData() {
         sx={{
           width: 300,
          
-          backgroundColor: "lightgray",
+          backgroundColor: "white",
+          border: "2px solid lightgrey",
 
           borderRadius: 5,
-          transform: "translate(300%, 20%)",
+          // transform: "translate(300%, 20%)",
          
         }}
       >

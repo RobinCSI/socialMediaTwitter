@@ -5,11 +5,12 @@ import style from "./Login.module.css";
 import { BsTwitter } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import { BsApple } from "react-icons/bs";
-import Icons from "../../components/Icons";
-import UiPart from "../../components/UiPart";
+import Icons from "../../components/smallComponents/Icons";
+import UiPart from "../../components/smallComponents/UiPart";
 import { ImCross } from "react-icons/im";
-import NormalButton from "../../components/NormalButton";
+import NormalButton from "../../components/smallComponents/NormalButton";
 import { NavLink, useNavigate } from "react-router-dom";
+import Navbar from "../navbar/Navbar";
 const Login = () => {
   const [data, setData] = useState([]);
   const [firstInput, setFirstInput] = useState("");
@@ -85,19 +86,21 @@ const Login = () => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                width: 600,
-                height: 600,
+                maxWidth: 500,
+                maxHeight: 500,
                 backgroundColor: "white",
                 borderRadius: "10px",
-                border: "1px solid green",
+                border: "2px solid lightgrey",
                 transform: "translate(-50%, -50%)",
                 position: "absolute",
                 top: "50%",
                 left: "50%",
+               marginTop:-5,
+                padding: 11,
               }}
             >
               <button onClick={handleForm}>
-                <Icons icons={<ImCross className="cross" />} />
+                <Icons icons={<ImCross className={style.cross} />} />
               </button>
 
               <UiPart title="Sign in to Twitter" />
@@ -131,6 +134,7 @@ const Login = () => {
                   "&:hover": {
                     backgroundColor: "initial",
                     color: "initial",
+                    border: "1px solid #dadce0",
                   },
                 }}
               >
@@ -154,6 +158,7 @@ const Login = () => {
                   "&:hover": {
                     backgroundColor: "initial",
                     color: "initial",
+                    border: "1px solid #dadce0",
                   },
                 }}
                 variant="outlined"
@@ -180,18 +185,22 @@ const Login = () => {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              width: 600,
-              height: 600,
+              maxWidth: 500,
+              maxHeight: 500,
               backgroundColor: "white",
               borderRadius: "10px",
-              border: "1px solid green",
+              border: "2px solid lightgrey",
               transform: "translate(-50%, -50%)",
               position: "absolute",
               top: "50%",
               left: "50%",
+              marginTop: -5,
+              padding: 15,
             }}
           >
-            <Icons icons={<ImCross className="cross" />} />
+            <button onClick={handleForm}>
+              <Icons icons={<ImCross className={style.cross} />} />
+            </button>
 
             <UiPart title="Sign in to Twitter" />
 
@@ -221,6 +230,7 @@ const Login = () => {
           </Box>
         </div>
       )}
+      <Navbar />
     </div>
   );
 };

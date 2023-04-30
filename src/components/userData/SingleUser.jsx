@@ -1,9 +1,9 @@
 import React from "react";
-import "./User.css";
+import style from "./User.module.css";
 import { Button, Box } from "@mui/material";
 function SingleUser(props) {
   return (
-    <div className="avtar">
+    <div className={style.avtar}>
       <img
         src={props.image}
         alt={props.name}
