@@ -1,4 +1,7 @@
 
+import { useState } from "react";
+
+
 import './App.css'
 import SignUp from './components/SignUp'
 
@@ -7,14 +10,18 @@ import SignUp from './components/SignUp'
 
 
 
+
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import SignUpInitial from "./pages/SignUpInitial";
-import Register from "./pages/Register";
-import NavBar from "./pages/Navbar";
-import Layout from "./components/layout/Layout";
+import Home from "./pages/home/Home";
+import SignUpInitial from "./pages/signup/SignUpInitial";
+
+import NavBar from "./pages/navbar/Navbar";
+
+
+
+
+
 import Logins from "./pages/Login/login";
-import UserData from "./components/userData/UserData";
 
 function App() {
   return (
@@ -23,10 +30,9 @@ function App() {
         <NavBar />
       </div>
       <Routes>
-
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Layout><Logins /></Layout>} />
-        <Route path="/signup" element={<Layout><SignUpInitial /></Layout>} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/login" element={<Logins />} />
+        <Route path="/signup" element={<SignUpInitial />} />
       </Routes>
     </>
   );

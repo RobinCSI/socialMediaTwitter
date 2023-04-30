@@ -1,0 +1,21 @@
+.icon {
+    color: rgb(29, 155, 240);
+    height: 30px;
+    width: 30px;
+    margin-top: -150px;
+    text-align: center;
+    margin-left: 140px;
+  }
+  .text {
+    color: black;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .google {
+    height: 20px;
+    width: 20px;
+    margin-right: 3%;
+  }
+  

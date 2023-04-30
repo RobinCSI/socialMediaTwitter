@@ -1,5 +1,5 @@
 import React from "react";
-import Icons from "./Icons";
+import Icons from "../smallComponents/Icons";
 import style from "./Single.module.css";
 function SingleMenu(props) {
   return (
