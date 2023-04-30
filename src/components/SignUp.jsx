@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import Styles from "./SignUp.module.css";
 import {
+  Alert,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
+  Snackbar,
   TextField,
 } from "@mui/material";
 import { green, grey, red } from "@mui/material/colors";
@@ -51,6 +53,8 @@ export default function SignUp() {
   const [isSubmit, setIsSubmit] = useState(false);
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate()
+  const [data, setData] = useState([]);
+  // const [open, setOpen] = useState(false);
 
   function handlechange(e) {
     const { name, value } = e.target;
@@ -62,25 +66,34 @@ export default function SignUp() {
   function handleToggle() {
     setToggle(!toggle);
   }
+  // function handleClose() {
+  //   setOpen(false);
+  // }
 
   function handleSubmit(e) {
     e.preventDefault();
     setIsSubmit(true);
     setErrors(validation(details));
-    // if(Object.keys(errors).length === 0 && isSubmit){
-    //   navigate('/')
-    // }
 
   }
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmit) {
-      localStorage.setItem("users", JSON.stringify(details));
+      localStorage.setItem("users", JSON.stringify([...data,details]));
       setDetails(initialData);
-      window.alert("Logged In")
+      
       navigate('/')
     }
   }, [errors]);
+
+  useEffect(() => {
+    const dataFromLocal = localStorage.getItem("users");
+    if (dataFromLocal) {
+      setData(JSON.parse(dataFromLocal));
+    } else {
+      setData([]);
+    }
+  }, []);
 
   function validation(details) {
     let warnings = {};
@@ -289,6 +302,11 @@ export default function SignUp() {
           </Button>
         </FormControl>
       </Box>
+      {/* <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
+          Succesfully Logged in...
+        </Alert>
+      </Snackbar> */}
     </div>
   );
 }
