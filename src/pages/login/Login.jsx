@@ -22,8 +22,11 @@ import { Password } from "@mui/icons-material";
 
 import { Snackbar } from "@mui/base";
 import Navbar from "../navbar/Navbar";
+import { useSetRecoilState } from "recoil";
+import { authAtom } from "../../recoil/users";
 
 const Login = () => {
+  const setAuth = useSetRecoilState(authAtom);
   const [data, setData] = useState([]);
   const [firstInput, setFirstInput] = useState("");
   const [show, setShow] = useState(false);
@@ -83,7 +86,16 @@ const Login = () => {
     if (findUser.password === password) {
       // alert("succes Fully loged in")
       setOpen(true);
-      
+      setAuth((auth) => {
+        return {
+          isLoggedIn: true,
+          user: {
+            name: findUser.username,
+            email: findUser.email,
+            number: findUser.number,
+          },
+        };
+      });
     } else {
       alert("please fill the correct Password");
     }
@@ -95,7 +107,7 @@ const Login = () => {
   // This function is for Cloging snackbar
   function handleClose() {
     setOpen(false);
-    navigate("/")
+    navigate("/");
   }
 
   return (

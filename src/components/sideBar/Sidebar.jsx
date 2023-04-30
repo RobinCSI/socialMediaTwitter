@@ -14,6 +14,7 @@ import { Button } from "@mui/material";
 import { fontSize } from "@mui/system";
 import { FaTwitterSquare } from "react-icons/fa";
 import { useMediaQuery } from "@mui/material";
+import ProfileCard from "../profileCard/ProfileCard";
 
 function Sidebar() {
   const isWidth700 = useMediaQuery("(min-width:700px)");
@@ -70,6 +71,9 @@ function Sidebar() {
           >
             Tweet
           </Button>
+        </div>
+        <div>
+          <ProfileCard/>
         </div>
       </div>
     </div>
