@@ -1,6 +1,16 @@
+
 import { useState } from "react";
 
-import "./App.css";
+
+import './App.css'
+import SignUp from './components/SignUp'
+
+
+
+
+
+
+
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/home/Home";
 import SignUpInitial from "./pages/signup/SignUpInitial";
