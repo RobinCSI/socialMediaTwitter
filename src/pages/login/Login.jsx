@@ -1,7 +1,7 @@
 import UiPart from "./../../components/smallComponents/UiPart";
 import { ImCross } from "react-icons/im";
 import NormalButton from "./../../components/smallComponents/NormalButton";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import React, { useEffect, useState } from "react";
 import { Alert, Button, TextField } from "@mui/material";
@@ -21,6 +21,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import { Password } from "@mui/icons-material";
 
 import { Snackbar } from "@mui/base";
+import Navbar from "../navbar/Navbar";
 
 const Login = () => {
   const [data, setData] = useState([]);
@@ -34,35 +35,9 @@ const Login = () => {
   // This state is for snackBar
   const [open, setOpen] = useState(false);
 
-  const userData = [
-    {
-      name: "Rishi",
-      email: "rishi@gmail.com",
-      phnNO: "12345678",
-      password: "Rishi@123",
-    },
-    {
-      name: "Ravi",
-      email: "ravi@gmail.com",
-      phnNO: "2345678",
-      password: "Ravi@123",
-    },
-    {
-      name: "Rahul",
-      email: "rahul@gmail.com",
-      phnNO: "345678",
-      password: "Rahul@123",
-    },
-    {
-      name: "Robin",
-      email: "robin@gmail.com",
-      phnNO: "5678",
-      password: "Robin@123",
-    },
-  ];
+  const navigate = useNavigate();
 
-  localStorage.setItem("users", JSON.stringify(userData));
-
+  console.log(data);
   useEffect(() => {
     const dataFromLocal = localStorage.getItem("users");
     if (dataFromLocal) {
@@ -79,9 +54,9 @@ const Login = () => {
     } else {
       const findUser = data.find((user) => {
         return (
-          user.name === firstInput ||
+          user.username === firstInput ||
           user.email === firstInput ||
-          user.phnNO === firstInput
+          user.number === firstInput
         );
       });
       if (!findUser) {
@@ -99,14 +74,15 @@ const Login = () => {
     e.preventDefault();
     const findUser = data.find((user) => {
       return (
-        user.name === firstInput ||
+        user.username === firstInput ||
         user.email === firstInput ||
-        user.phnNO === firstInput
+        user.number === firstInput
       );
     });
     if (findUser.password === password) {
       // alert("succes Fully loged in")
       setOpen(true);
+      navigate("/");
     } else {
       alert("please fill the correct Password");
     }
