@@ -68,6 +68,7 @@ const Login = () => {
   }
   function handleForm() {
     setShowForm(false);
+    navigate("/");
   }
 
   function handlePasswordSumbit(e) {
@@ -82,7 +83,7 @@ const Login = () => {
     if (findUser.password === password) {
       // alert("succes Fully loged in")
       setOpen(true);
-      navigate("/");
+      
     } else {
       alert("please fill the correct Password");
     }
@@ -94,6 +95,7 @@ const Login = () => {
   // This function is for Cloging snackbar
   function handleClose() {
     setOpen(false);
+    navigate("/")
   }
 
   return (
