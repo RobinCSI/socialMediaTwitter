@@ -6,15 +6,22 @@ import { Box } from "@mui/system";
 import { Button } from "@mui/material";
 import { func } from "prop-types";
 import { useNavigate } from "react-router";
+import { useSetRecoilState } from "recoil";
+import { authAtom } from "../../recoil/users";
 export default function ProfileCard() {
   const [show, setShow] = useState(false);
   const navigate = useNavigate()
-
+  const setAuth=useSetRecoilState(authAtom)
   function handleToggle() {
     setShow(!show);
   }
 
-  function handleLoggout() {}
+  function handleLoggout() {
+    setAuth({
+      isLoggedIn:false,
+      user:null
+    })
+  }
 
   function handleAccount() {
     navigate('/login')
