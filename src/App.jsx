@@ -1,34 +1,41 @@
-import { useState } from 'react'
-import React from 'react'
+import React from 'react';
+
+
 import './App.css'
-import { Route, Router, Routes } from 'react-router-dom'
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import NavBar from './pages/Navbar'
+import SignUp from './components/SignUp'
 
 
-import Logins from './pages/Login/login'
+
+
+
+
+
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/home/Home";
+import SignUpInitial from "./pages/signup/SignUpInitial";
+
+import NavBar from "./pages/navbar/Navbar";
+
+
+
+
+
+import Logins from "./pages/Login/login";
+
 function App() {
- 
-
   return (
     <>
-
       <div>
-      
-        <NavBar/>
+        <NavBar />
       </div>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/register" element={<Register/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Logins />} />
+        <Route path="/signup" element={<SignUpInitial />} />
+        <Route path="/register" element={<SignUp />} />
       </Routes>
-
-    <Logins/>
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;

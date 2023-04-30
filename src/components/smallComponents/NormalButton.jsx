@@ -1,33 +1,33 @@
 import React from 'react'
-import {
-    Button} from "@mui/material";
-function Buttons(props) {
+import { Button } from '@mui/material'
+function NormalButton(props) {
   return (
     <div>
-       <Button
+      <Button
           sx={{
             width: 300,
             height: 40,
             border: "1px solid #dadce0",
-            backgroundColor: "white",
+            backgroundColor: "black",
             borderRadius: "50px",
-            color: "black",
+            color: "white",
             fontFamily: "Google Sans arial,sans-serif",
             fontSize: 14,
             letterSpacing: 0.25,
             margin: 2,
-            textTransform: "none",
+
+            "&:hover": {
+              backgroundColor: "initial",
+              color: "initial",
+              border: "1px solid #dadce0",
+            },
           }}
           variant="outlined"
-
-          startIcon={props.icon}
         >
-          {/* <FcGoogle className="google" /> */}
-          {/* Sign up with Google */}
-          {props.texts}
+          {props.name}
         </Button>
     </div>
   )
 }
 
-export default Buttons
+export default NormalButton
