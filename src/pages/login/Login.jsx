@@ -104,8 +104,35 @@ const userData=[
     setShowForm(false);
   }
 
+  
+  function handlePasswordSumbit(e){
+    e.preventDefault()
+    const findUser=data.find((user)=>{
+     return(
+         user.name===firstInput ||  user.email===firstInput || user.phnNO===firstInput
+     )
+ })
+   if(findUser.password===password){
+     // alert("succes Fully loged in")
+     setOpen(true)
+   
+   }
+   else{
+     alert("please fill the correct Password")
+   }
+ }
+
+ //this funtions are for password toggle
+ const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+ // This function is for Cloging snackbar
+ function handleClose(){
+   setOpen(false)
+ }
+
   return (
     <div>
+
       {!show ? (
         <form onSubmit={handleSubmit}>
           {showForm && (
@@ -204,6 +231,7 @@ const userData=[
         </form>
       ) : (
         <div>
+          <form  onSubmit={handlePasswordSumbit}>
           <Box
             sx={{
               zIndex: 99,
@@ -234,136 +262,8 @@ const userData=[
               sx={{ width: 300, marginBottom: 5 }}
             />
 
-            <TextField
-              id="filled-basic"
-              label="Password"
-              variant="outlined"
-              sx={{ width: 300 }}
-            />
-
-            <p className="p">
-              Don't have an account?{" "}
-              <span>
-                <NavLink className="link" to="/signup">
-                  Sign up
-                </NavLink>
-              </span>
-            </p>
-          </Box>
-        </div>
-      )}
-
-
-  function handlePasswordSumbit(e){
-     e.preventDefault()
-     const findUser=data.find((user)=>{
-      return(
-          user.name===firstInput ||  user.email===firstInput || user.phnNO===firstInput
-      )
-  })
-    if(findUser.password===password){
-      // alert("succes Fully loged in")
-      setOpen(true)
-    
-    }
-    else{
-      alert("please fill the correct Password")
-    }
-  }
-
-  //this funtions are for password toggle
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
-
-  // This function is for Cloging snackbar
-  function handleClose(){
-    setOpen(false)
-  }
- 
-  return (
-    <div>
-        
-      {
-        !show? 
-        <form  onSubmit={handleSubmit}>
-    <Box
-      sx={{
-        width: 400,
-        height: 500,
-        backgroundColor: 'white',
-      }}
-    >
-     <div>
-     <BsTwitter  className={style.icon}/>
-     </div>
-     <div>
-     <h1 className={style.heading}>Sign in to twitter</h1>
-     </div>
-      <div>
-       <Button variant="contained" sx={{
-        backgroundColor:'white',
-        color: 'black',
-       }}>
-        <FcGoogle/> Sign in with Google
-       </Button>
-      </div>
-      <div>
-       <Button variant="contained" sx={{
-        backgroundColor:'white',
-        color: 'black',
-       }}>
-       <BsApple/>  Sign in with Apple
-       </Button>
-      </div>
-     <div>
-     <TextField  onChange={(e)=>setFirstInput(e.target.value)}
-      value={firstInput}
-      id="filled-basic"
-      label="Phone,email, or username"
-      variant="filled" 
-      />
-     </div>
-     <div>
-       <Button variant="contained" type='submit' sx={{
-        backgroundColor:'white',
-        color: 'black',
-       }}>
-        Next
-       </Button>
-      </div>
-      <div>
-       <Button variant="contained" sx={{
-        backgroundColor:'white',
-        color: 'black',
-       }}>
-       Forgot Password ?
-       </Button>
-      </div>
-      <div>
-        <p>Don't have an account? Sign up</p>
-      </div>
-     </Box>
-     </form>
-        :
-        <div>
-          <form  onSubmit={handlePasswordSumbit}>
-        <Box
-          sx={{
-            width: 400,
-            height: 500,
-            backgroundColor: 'white',
-          }}
-        >
-         <div>
-         <BsTwitter  className={style.icon}/>
-         </div>
-         <div>
-         <h1 className={style.heading}>Sign in to twitter</h1>
-         </div>
-         <div> 
-         <TextField id="outlined-basic" value={firstInput} variant="outlined" />
-         </div>
-         <div>
-          <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
+             <div>
+             <FormControl sx={{ m: 1, width: '25ch' }} variant="filled">
              <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
              <FilledInput
              onChange={(e)=>setPassword(e.target.value)}
@@ -380,36 +280,44 @@ const userData=[
                   {showPassword ? <VisibilityOff /> : <Visibility />}
                 </IconButton>
               </InputAdornment>
-            }
-          />
-        </FormControl>
-
-         </div>
-          <div>
-            <p>Don't have an account? Sign up</p>
-          </div>
-          <div>
+               }
+            />
+          </FormControl>
+             </div>
+             <div>
               <Button variant="contained" type='submit' sx={{
                  backgroundColor:'white',
                  color: 'black',
                  }}>
-                 Next
+                 Log in
               </Button>
           </div>
-         </Box>
-         </form>
+
+          <div>
+          <p className="p">
+              Don't have an account?{" "}
+              <span>
+                <NavLink className="link" to="/signup">
+                  Sign up
+                </NavLink>
+              </span>
+            </p>
+          </div>
+          </Box>
+          </form>
         </div>
+      )
+
       }
-       
-       <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
+         <Snackbar open={open} autoHideDuration={1000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
           Succesfully Logged in...
        </Alert>
       </Snackbar>
     
-
     </div>
-  );
-};
+     )
+  }
+
 
 export default Login;
