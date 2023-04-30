@@ -26,7 +26,7 @@ function SignUpInitial() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: 600,
+          width: 600, 
           height: 600,
           backgroundColor: "white",
           borderRadius: "10px",
