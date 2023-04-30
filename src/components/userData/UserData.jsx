@@ -12,7 +12,7 @@ function UserData() {
     fetch("/users.json")
       .then((response) => response.json())
       .then((twwets) => {
-        console.log(twwets);
+        
         setUserData(twwets);
       });
   };
