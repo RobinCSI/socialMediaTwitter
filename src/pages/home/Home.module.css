@@ -10,7 +10,7 @@
   display: grid;
 }
 .mainSection {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   grid-column: 3/4;
 }
 .rightSide {
