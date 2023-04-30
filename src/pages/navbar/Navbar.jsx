@@ -1,11 +1,12 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import style from "./Navbar.module.css";
 import { Button } from "@mui/material";
 
 function Navbar() {
   const navigate = useNavigate();
   function handleShowLogin() {
+    
     navigate("/login");
   }
 
