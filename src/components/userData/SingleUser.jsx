@@ -1,9 +1,9 @@
 import React from "react";
-import "./User.css";
+import style from "./User.module.css";
 import { Button, Box } from "@mui/material";
 function SingleUser(props) {
   return (
-    <div className="avtar">
+    <div className={style.avtar}>
       <img
         src={props.image}
         alt={props.name}
@@ -18,7 +18,7 @@ function SingleUser(props) {
           color: "black",
           textTransform: "none",
           borderRadius: 50,
-         border:"none"
+         border: "1px solid black",
         }}
         variant="outlined"
       >

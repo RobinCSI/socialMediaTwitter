@@ -1,36 +1,28 @@
 
-import { useState } from "react";
+import React from 'react';
 
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import SignUpInitial from "./pages/SignUpInitial";
-import Register from "./pages/Register";
-import NavBar from "./pages/Navbar";
-import Layout from "./components/layout/Layout";
-// import Logins from "./pages/login/Login";
-import UserData from "./components/userData/UserData";
-import TwitterFeed from "./components/homeTweetCarousel/twitterFeed/TwitterFeed";
+import SignUp from "./components/SignUp";
 
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/home/Home";
+import SignUpInitial from "./pages/signup/SignUpInitial";
+
+import NavBar from "./pages/navbar/Navbar";
+
+import Login from "./pages/Login/login";
 
 function App() {
   return (
     <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
       <div>
-        {/* <NavBar /> */}
-        <Layout><TwitterFeed /></Layout>
+        <NavBar />
       </div>
-      {/* <Routes> */}
-
-        {/* <Route path="/" element={<Layout><Home/></Layout>} /> */}
-        {/* <Route path="/login" element={<Layout><Logins /></Layout>} /> */}
-        {/* <Route path="/signup" element={<Layout><SignUpInitial /></Layout>} /> */}
-
-        {/* <Route path="/home" element={<Layout />} /> */}
-      {/* </Routes> */}
-
-    
-
     </>
   );
 }

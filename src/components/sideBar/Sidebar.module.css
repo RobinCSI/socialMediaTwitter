@@ -1,22 +1,27 @@
-.mainBox{
-    border-radius: 10px;
-    width: 15vw;
-    height: 70vh;
-    padding: 3%;
-    margin-left: 3%;
-    transform: translate(60%,5%);
-    box-shadow: 0px 0px 10px 5px rgba(128, 128, 128, 0.5);
-    
-    justify-content: left;
+.mainBox {
+  border-radius: 10px;
+  width: 15vw;
+  height: 70vh;
+  padding: 3%;
+  margin: 3%;
+  /* transform: translate(60%,5%); */
+  /* box-shadow: 0px 0px 10px 5px rgba(128, 128, 128, 0.5); */
+
+  justify-content: left;
 }
-.iconss{
-   font-size: 20px;
+.iconss {
+  font-size: 20px;
 }
-.icons{
-    color: rgb(29, 155, 240);;
-    height: 30px;
-    width: 30px;
-  
-   text-align: center;
-   margin-left: 15px;
+.icons {
+  color: rgb(29, 155, 240);
+  height: 30px;
+  width: 30px;
+
+  text-align: center;
+  margin-left: 15px;
+}
+@media screen and (max-width: 700px) {
+  .twitter {
+    display: none;
+  }
 }

@@ -1,0 +1,45 @@
+
+.google {
+  height: 20px;
+  width: 20px;
+  margin-right: 3%;
+}
+.btn {
+  width: 300;
+  height: 40;
+  border: "1px solid #dadce0";
+  background-color: "white";
+  border-radius: "50px";
+  color: "black";
+  font-family: "Google Sans arial,sans-serif";
+  font-size: 14;
+  letter-spacing: 0.25;
+}
+
+.hrr {
+  color: black;
+  border: "2px solid red";
+}
+span {
+  color: rgb(29, 155, 240);
+  cursor: pointer;
+}
+span:hover {
+  text-decoration: underline;
+}
+
+.link {
+  color: rgb(29, 155, 240);
+}
+.link:hover {
+  color: rgb(29, 155, 240);
+}
+.p {
+  margin-top: 6%;
+}
+
+.cross {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
