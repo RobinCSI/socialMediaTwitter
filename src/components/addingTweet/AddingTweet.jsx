@@ -29,7 +29,7 @@ export default function TwitterFeed(){
 
         // console.log("Adding")
         if (name && tweet){
-        let newTweet={id:uuid(), content: tweet, createdAt: new Date().toJSON(), image: "https://picsum.photos/1000/500?q=0", tweetedBy: {id: uuid(), name: "Robin"}, likeCount:0, commentCount:0, reTweetsCount:0, isLiked:false  }
+        let newTweet={id:uuid(), content: tweet, createdAt: new Date().toJSON(), image: "https://picsum.photos/1000/500?q=0", tweetedBy: {id: uuid(), name: name}, likeCount:0, commentCount:0, reTweetsCount:0, isLiked:false  }
         dispatch(addTweet(newTweet))
         setTweet('')
         setName('')
