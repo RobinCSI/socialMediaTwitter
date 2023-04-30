@@ -1,7 +1,12 @@
 
-import { useState } from "react";
+import './App.css'
+import SignUp from './components/SignUp'
 
-import "./App.css";
+
+
+
+
+
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import SignUpInitial from "./pages/SignUpInitial";
@@ -23,9 +28,6 @@ function App() {
         <Route path="/login" element={<Layout><Logins /></Layout>} />
         <Route path="/signup" element={<Layout><SignUpInitial /></Layout>} />
       </Routes>
-
-    
-
     </>
   );
 }
