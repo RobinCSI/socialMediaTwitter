@@ -10,12 +10,12 @@ import {store} from './components/redux/store.js'
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-
+    <Provider store={store}>
     <RecoilRoot>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </RecoilRoot>
-
+    </Provider>
   </React.StrictMode>
 );

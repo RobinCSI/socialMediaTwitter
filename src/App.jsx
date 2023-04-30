@@ -7,7 +7,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/home/Home";
 import SignUpInitial from "./pages/signup/SignUpInitial";
 
-import NavBar from "./pages/navbar/Navbar";
+
 
 import Login from "./pages/Login/login";
 import { useRecoilState } from "recoil";
@@ -39,9 +39,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
-      <div>
-        <NavBar />
-      </div>
+      
     </>
   );
 }

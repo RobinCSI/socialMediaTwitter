@@ -16,6 +16,8 @@ import { Button } from "@mui/base";
 import { func } from "prop-types";
 import { useNavigate } from "react-router-dom";
 
+import Navbar from './../pages/navbar/Navbar'
+
 export default function SignUp() {
   let months = [
     "Jan",
@@ -213,7 +215,7 @@ export default function SignUp() {
               style={{ color: "blue", textAlign: "right", cursor: "pointer" }}
               onClick={handleToggle}
             >
-              {toggle ? <>use email instead</> : <>use number instead</>}
+              {toggle ? <>Use email instead</> : <>Use phone instead</>}
 
               {/* //error message */}
             </p>
@@ -307,6 +309,7 @@ export default function SignUp() {
           Succesfully Logged in...
         </Alert>
       </Snackbar> */}
+      <Navbar />
     </div>
   );
 }
