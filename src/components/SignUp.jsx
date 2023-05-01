@@ -162,8 +162,12 @@ export default function SignUp() {
         }}
       >
         <button onClick={handleForm}>
-          <Icons icons={<ImCross className={Styles.cross} />} />
-        </button>
+
+            <Icons icons={<ImCross className={Styles.cross} />} />
+          </button>
+
+        
+
         <FormControl type="submit">
           <h2
             style={{
