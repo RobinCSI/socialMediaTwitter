@@ -18,10 +18,11 @@ import UserData from "./components/userData/UserData";
 import style from "./pages/home/Home.module.css";
 import TrendingData from "./components/trending/TrendingData";
 import AddingTweet from "./components/addingTweet/AddingTweet";
-import TwitterFeed from "./components/homeTweetCarousel/twitterFeed/TwitterFeed"
+import TwitterFeed from "./components/homeTweetCarousel/twitterFeed/TwitterFeed";
 import LandingSidebar from "./components/landingPage/LandingSidebar";
 import RightsideCard from "./components/landingPage/RightsideCard";
 import Navbar from "./pages/navbar/Navbar";
+import LandingPa from "./pages/LandingPa";
 
 function App() {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ function App() {
     }
     localStorage.setItem("auth", JSON.stringify(auth));
     if (auth.isLoggedIn) {
-      navigate("/");
+      navigate("/home");
     } else {
       navigate("/login");
     }
@@ -44,29 +45,29 @@ function App() {
 
   return (
     <>
-      <div className={style.home}>
+
+      {/* <div className={style.home}>
         <div className={style.sidebar}>
           <LandingSidebar />
         </div>
         <div className={style.mainSection}>
-         
           <div>
             <TwitterFeed />
           </div>
         </div>
         <div className={style.rightSide}>
           <div className={style.trendings}>
-           <RightsideCard/>
+            <RightsideCard />
           </div>
-          
         </div>
-        <Navbar/>
-      </div>
+        <Navbar />
+      </div> */}
       <Routes>
+        <Route path="/" element={<LandingPa />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUpInitial />} />
-        <Route path="/register" element={<SignUp/>}/>
+        <Route path="/register" element={<SignUp />} />
       </Routes>
     </>
   );
