@@ -94,7 +94,9 @@ export default function SignUp() {
       localStorage.setItem("users", JSON.stringify([...data, details]));
       setDetails(initialData);
 
+
       navigate("/login");
+
     }
   }, [errors]);
 
@@ -165,8 +167,6 @@ export default function SignUp() {
 
             <Icons icons={<ImCross className={Styles.cross} />} />
           </button>
-
-        
 
         <FormControl type="submit">
           <h2
