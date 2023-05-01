@@ -24,9 +24,10 @@ import LandingPa from "./pages/LandingPa";
 
 
 
-import Login from "./pages/Login/login";
+// import Login from "./pages/login/login";
 import { useRecoilState } from "recoil";
 import { authAtom } from "./recoil/users";
+import Login from "./pages/login/Login";
 
 
 function App() {
@@ -43,7 +44,7 @@ function App() {
     if (auth.isLoggedIn) {
       navigate("/home");
     } else {
-      navigate("/login");
+      navigate("/");
     }
     isFirstRender.current = false;
   }, [auth]);
