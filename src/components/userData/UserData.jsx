@@ -48,7 +48,7 @@ function UserData() {
                 key={currentEle.user_id}
                 image={currentEle.avatar_url}
                 firstname={currentEle.first_name}
-                msg="Follow"
+                
               />
             </>
           );
