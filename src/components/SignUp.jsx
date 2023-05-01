@@ -168,9 +168,7 @@ left: 400,
             <Icons icons={<ImCross className={Styles.cross} />} />
           </button>
 
-          border:'1px solid #dadce0'
-        }}
-      >
+        
 
         <FormControl type="submit">
           <h2
