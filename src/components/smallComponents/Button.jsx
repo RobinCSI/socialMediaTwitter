@@ -17,6 +17,11 @@ function Buttons(props) {
             letterSpacing: 0.25,
             margin: 2,
             textTransform: "none",
+            "&:hover": {
+              backgroundColor: "initial",
+              color: "initial",
+              border: "1px solid #dadce0",
+            },
           }}
           variant="outlined"
 

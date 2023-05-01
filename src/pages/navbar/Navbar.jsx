@@ -1,10 +1,12 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import "./Signup.css";
+import {useNavigate } from "react-router-dom";
+import style from "./Navbar.module.css";
 import { Button } from "@mui/material";
+
 function Navbar() {
   const navigate = useNavigate();
   function handleShowLogin() {
+    
     navigate("/login");
   }
 
@@ -12,15 +14,15 @@ function Navbar() {
     navigate("/signup");
   }
   return (
-    <div className="navbar">
-      <div className="textNavbar">
-        <p className="msg">
+    <div className={style.navbar}>
+      <div className={style.textNavbar}>
+        <p className={style.msg}>
           <h2>Don’t miss what’s happening</h2>
           People on Twitter are the first to know.
         </p>
       </div>
 
-      <div className="yellow">
+      <div className={style.yellow}>
         <Button
           sx={{
             borderRadius: 50,
@@ -31,7 +33,7 @@ function Navbar() {
               color: "white",
             },
           }}
-          className="navLink"
+          className={style.navLink}
           onClick={handleShowLogin}
           variant="outlined"
         >
@@ -45,7 +47,7 @@ function Navbar() {
               color: "initial",
             },
           }}
-          className="navLink"
+          className={style.navLink}
           onClick={handleShowSignup}
           variant="contained"
         >

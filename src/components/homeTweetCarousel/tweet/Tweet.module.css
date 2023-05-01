@@ -1,0 +1,58 @@
+.tweetHeading{
+    display:flex;
+}
+
+.tweet{
+    /* border:1px solid; */
+    text-align: left;
+    padding:10px;
+
+}
+
+.tweetText{
+    display:flex;
+    align-items: center;
+    /* width:60%; */
+    /* justify-content:flex-start; */
+    /* border:1px solid; */
+
+
+}
+.headingText{
+    margin:3px;
+}
+.profilePic{
+    height:50px;
+    width:50px;
+    border-radius:25px;
+    margin:10px;
+
+}
+
+.tweetPic{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.impressionBar{
+
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.icons{
+    width:10%;
+    /* border:1px solid; */
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    /* color:black; */
+    /* text-decoration-color: grey; */
+    cursor:pointer;
+}
+
+.iconsCount{
+
+    color:gray;
+}
