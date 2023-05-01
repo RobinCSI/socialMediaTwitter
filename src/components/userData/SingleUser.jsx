@@ -18,13 +18,14 @@ function SingleUser(props) {
           backgroundColor: "transparent",
         }}
       />
-      <div>{props.firstname}</div>
+      <div style={{fontWeight: "700"}}>{props.firstname}</div>
       <Button
         sx={{
           height: 30,
           margin: 3,
-          backgroundColor: "white",
-          color: "black",
+          backgroundColor: "black",
+          color: "white",
+          fontWeight: "700",
           textTransform: "none",
           borderRadius: 50,
           border: "1px solid black",

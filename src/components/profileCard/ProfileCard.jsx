@@ -22,7 +22,7 @@ export default function ProfileCard() {
   //       setData([])
   //     }
   //  },[])
-   console.log(data.auth)
+  //  console.log(data.auth)
   const [show, setShow] = useState(false);
   const navigate = useNavigate()
   const setAuth=useSetRecoilState(authAtom)
