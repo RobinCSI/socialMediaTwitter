@@ -33,7 +33,7 @@ function UserData() {
     <div>
       <Box
         sx={{
-          backgroundColor: "white",
+          backgroundColor: "rgb(247, 249, 249)",
           border: "2px solid lightgrey",
           width: 300,
           borderRadius: 5,
