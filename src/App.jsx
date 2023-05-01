@@ -7,9 +7,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/home/Home";
 import SignUpInitial from "./pages/signup/SignUpInitial";
 
-import Login from "./pages/Login/login";
-import { useRecoilState } from "recoil";
-import { authAtom } from "./recoil/users";
+
 
 import { FcGoogle } from "react-icons/fc";
 import Buttons from "./components/smallComponents/Button";
@@ -22,6 +20,13 @@ import TwitterFeed from "./components/homeTweetCarousel/twitterFeed/TwitterFeed"
 import LandingSidebar from "./components/landingPage/LandingSidebar";
 import RightsideCard from "./components/landingPage/RightsideCard";
 import Navbar from "./pages/navbar/Navbar";
+
+
+
+import Login from "./pages/Login/login";
+import { useRecoilState } from "recoil";
+import { authAtom } from "./recoil/users";
+
 
 function App() {
   const navigate = useNavigate();
@@ -44,6 +49,7 @@ function App() {
 
   return (
     <>
+
       <div className={style.home}>
         <div className={style.sidebar}>
           <LandingSidebar />
@@ -63,11 +69,13 @@ function App() {
         <Navbar/>
       </div>
       <Routes>
+       <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUpInitial />} />
         <Route path="/register" element={<SignUp/>}/>
       </Routes>
+
     </>
   );
 }

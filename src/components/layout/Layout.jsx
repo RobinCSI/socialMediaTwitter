@@ -10,6 +10,9 @@ import UserData from "../userData/UserData";
 import Sidebar from "../sideBar/Sidebar";
 import UserData from "../userData/UserData";
 
+import Sidebar from "../sideBar/Sidebar";
+import UserData from "../userData/UserData";
+
 
 const Layout = ({children}) => {
   console.log(children)

@@ -24,9 +24,11 @@
   margin-bottom: 10%;
 }
 
+
 .trendings{
  margin-top: 2%
 }
+
 @media screen and (max-width: 800px) {
   .rightSide {
     display: none;

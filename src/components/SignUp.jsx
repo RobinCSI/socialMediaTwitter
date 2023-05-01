@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import Styles from "./SignUp.module.css";
+
 import style from "./Signup.module.css";
 import { ImCross } from "react-icons/im";
 import Icons from "./smallComponents/Icons";
+
 import {
   Alert,
   FormControl,
@@ -23,11 +25,13 @@ import Navbar from './../pages/navbar/Navbar'
 
 export default function SignUp() {
 
+
   const [showForm, setShowForm] = useState(true);
   function handleForm() {
     setShowForm(!showForm);
     navigate("/");
   }
+
   let months = [
     "Jan",
     "Feb",
@@ -153,6 +157,7 @@ export default function SignUp() {
           margin: "0 auto",
           padding: "2rem",
           textAlign: "center",
+
           border:'1px solid #dadce0',
           position:"absolute",
           top:0,
@@ -162,6 +167,11 @@ left: 400,
         <button onClick={handleForm}>
             <Icons icons={<ImCross className={Styles.cross} />} />
           </button>
+
+          border:'1px solid #dadce0'
+        }}
+      >
+
         <FormControl type="submit">
           <h2
             style={{
