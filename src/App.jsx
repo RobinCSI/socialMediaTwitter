@@ -44,7 +44,7 @@ function App() {
     if (auth.isLoggedIn) {
       navigate("/home");
     } else {
-      navigate("/login");
+      navigate("/");
     }
     isFirstRender.current = false;
   }, [auth]);
