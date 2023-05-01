@@ -168,6 +168,7 @@ export default function SignUp() {
             <Icons icons={<ImCross className={Styles.cross} />} />
           </button>
 
+
         <FormControl type="submit">
           <h2
             style={{
