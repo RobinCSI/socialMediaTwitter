@@ -39,8 +39,6 @@ const Login = () => {
   const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
-
-  console.log(data);
   useEffect(() => {
     const dataFromLocal = localStorage.getItem("users");
     if (dataFromLocal) {
