@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { CgProfile } from "react-icons/cg";
 import { BsThreeDots } from "react-icons/bs";
 import styles from "./ProfileCard.module.css";
 import { Box } from "@mui/system";
-import { Button } from "@mui/material";
-import { func } from "prop-types";
+
 import { useNavigate } from "react-router";
 import { useSetRecoilState } from "recoil";
 import { authAtom } from "../../recoil/users";
 export default function ProfileCard() {
+  const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+  const setAuth = useSetRecoilState(authAtom);
 
-  const[data,setData]=useState([])
- 
+  //Importing data from local
+  const dataFromLocal = JSON.parse(localStorage.getItem("auth"));
+
 
   //  useEffect(()=>{
   //     const dataFromLocal=localStorage.getItem("auth")
@@ -23,22 +26,21 @@ export default function ProfileCard() {
   //     }
   //  },[])
   //  console.log(data.auth)
-  const [show, setShow] = useState(false);
-  const navigate = useNavigate()
-  const setAuth=useSetRecoilState(authAtom)
+  
+
   function handleToggle() {
     setShow(!show);
   }
 
   function handleLoggout() {
     setAuth({
-      isLoggedIn:false,
-      user:null
-    })
+      isLoggedIn: false,
+      user: null,
+    });
   }
 
   function handleAccount() {
-    navigate('/login')
+    navigate("/login");
   }
   return (
     <div>
@@ -59,7 +61,7 @@ export default function ProfileCard() {
           <div className={styles.logoutCon}>
             <h3 onClick={handleAccount}>Add an existing account</h3>
             <h3 onClick={handleLoggout} className={styles.logouth3}>
-              Logout 
+              Logout
             </h3>
           </div>
         </Box>
@@ -69,7 +71,8 @@ export default function ProfileCard() {
       <div className={styles.container}>
         <CgProfile className={styles.profileIcon} />
         <div className={styles.name}>
-          <h3>Logout</h3>
+          <h3>{dataFromLocal.user.name}</h3>
+          <h4>{dataFromLocal.user.email}</h4>
         </div>
         <BsThreeDots onClick={handleToggle} className={styles.dots} />
       </div>

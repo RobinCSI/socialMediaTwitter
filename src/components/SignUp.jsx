@@ -94,7 +94,9 @@ export default function SignUp() {
       localStorage.setItem("users", JSON.stringify([...data, details]));
       setDetails(initialData);
 
-      navigate("/");
+
+      navigate("/login");
+
     }
   }, [errors]);
 
@@ -166,7 +168,6 @@ export default function SignUp() {
             <Icons icons={<ImCross className={Styles.cross} />} />
           </button>
 
-        
 
         <FormControl type="submit">
           <h2
@@ -181,7 +182,7 @@ export default function SignUp() {
           </h2>
           <TextField
             sx={{
-              backgroundColor: red,
+              // backgroundColor: red,
               width: 438,
               height: 56,
               // marginBottom: 2,
@@ -288,8 +289,8 @@ export default function SignUp() {
               label="Years"
               select
             >
-              {years.map((year) => {
-                return <MenuItem value={year}>{year}</MenuItem>;
+              {years.map((year,index) => {
+                return <MenuItem key={index} value={year}>{year}</MenuItem>;
               })}
             </TextField>
             <TextField
@@ -300,9 +301,9 @@ export default function SignUp() {
               label="Day"
               select
             >
-              {days.map((day) => {
+              {days.map((day,index) => {
                 return (
-                  <MenuItem key={day} value={day}>
+                  <MenuItem key={index} value={day}>
                     {day}
                   </MenuItem>
                 );
