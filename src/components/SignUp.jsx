@@ -21,11 +21,9 @@ import { Button } from "@mui/base";
 import { func } from "prop-types";
 import { useNavigate } from "react-router-dom";
 
-import Navbar from './../pages/navbar/Navbar'
+import Navbar from "./../pages/navbar/Navbar";
 
 export default function SignUp() {
-
-
   const [showForm, setShowForm] = useState(true);
   function handleForm() {
     setShowForm(!showForm);
@@ -67,7 +65,7 @@ export default function SignUp() {
   const [errors, setErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const [toggle, setToggle] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [data, setData] = useState([]);
   // const [open, setOpen] = useState(false);
 
@@ -89,15 +87,14 @@ export default function SignUp() {
     e.preventDefault();
     setIsSubmit(true);
     setErrors(validation(details));
-
   }
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmit) {
-      localStorage.setItem("users", JSON.stringify([...data,details]));
+      localStorage.setItem("users", JSON.stringify([...data, details]));
       setDetails(initialData);
-      
-      navigate('/')
+
+      navigate("/");
     }
   }, [errors]);
 
@@ -143,12 +140,12 @@ export default function SignUp() {
   console.log(errors);
   console.log(toggle);
   return (
-    <div style={{margin:'50px'}}>
+    <div style={{ margin: "50px" }}>
       <Box
         sx={{
           paddingRight: "40px",
           paddingLeft: "40px",
-           width: 600,
+          width: 600,
           height: 647,
           backgroundColor: "white",
           borderRadius: 5,
@@ -158,20 +155,15 @@ export default function SignUp() {
           padding: "2rem",
           textAlign: "center",
 
-          border:'1px solid #dadce0',
-          position:"absolute",
-          top:0,
-left: 400,
+          border: "1px solid #dadce0",
+          position: "absolute",
+          top: 0,
+          left: 400,
         }}
       >
         <button onClick={handleForm}>
-            <Icons icons={<ImCross className={Styles.cross} />} />
-          </button>
-
-          border:'1px solid #dadce0'
-        }}
-      >
-
+          <Icons icons={<ImCross className={Styles.cross} />} />
+        </button>
         <FormControl type="submit">
           <h2
             style={{
@@ -319,9 +311,9 @@ left: 400,
               marginTop: "80px",
               padding: "15px",
               borderRadius: "25px",
-              color:'white',
-              backgroundColor:'black',
-              cursor:'pointer'
+              color: "white",
+              backgroundColor: "black",
+              cursor: "pointer",
             }}
             onClick={handleSubmit}
           >
