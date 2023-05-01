@@ -12,9 +12,11 @@ import { BiPoll } from "react-icons/bi";
 import { BsEmojiSmile } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import TextField from "@mui/material/TextField";
+
 import { Icon } from '@mui/material'
 import Icons from '../smallComponents/Icons'
 import { FiSettings} from "react-icons/fi"
+
 
 export default function TwitterFeed(){
     const [tweet, setTweet]=useState('')
@@ -44,6 +46,7 @@ export default function TwitterFeed(){
  
 
   return (
+
     <>
     {/* <div className={style.nav}>
 <h2 className={style.h222}>Explore</h2>
@@ -52,6 +55,7 @@ export default function TwitterFeed(){
 </span>
 
     </div> */}
+
     <div className={style.container}>
       <h1>
         <form onSubmit={handleAddTweet}>
@@ -94,8 +98,10 @@ export default function TwitterFeed(){
         </form>
       </h1>
     </div>
+
     </>
     
+
   );
 }
 

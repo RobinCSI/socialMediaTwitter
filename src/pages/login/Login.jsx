@@ -39,8 +39,6 @@ const Login = () => {
   const [open, setOpen] = useState(false);
 
   const navigate = useNavigate();
-
-  console.log(data);
   useEffect(() => {
     const dataFromLocal = localStorage.getItem("users");
     if (dataFromLocal) {
@@ -122,8 +120,10 @@ const Login = () => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
+
                 maxWidth: 600,
                 maxHeight: 600,
+
                 backgroundColor: "white",
                 borderRadius: "10px",
                 border: "2px solid lightgrey",
@@ -222,8 +222,10 @@ const Login = () => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
+
                 maxWidth: 600,
                 maxHeight: 600,
+
                 backgroundColor: "white",
                 borderRadius: "10px",
                 border: "2px solid lightgrey",
