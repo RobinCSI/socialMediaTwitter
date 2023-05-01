@@ -6,16 +6,22 @@ import { ImCross } from "react-icons/im";
 import style from "./Signup.module.css";
 
 import { Button, Box } from "@mui/material";
-import { Link, NavLink } from "react-router-dom";
+
+import { Link, NavLink, useNavigate } from "react-router-dom";
+
 import Icons from "../../components/smallComponents/Icons";
 import UiPart from "../../components/smallComponents/UiPart";
 import NormalButton from "../../components/smallComponents/NormalButton";
 import Navbar from "../navbar/Navbar";
 
 function SignUpInitial() {
+
+  const navigate=useNavigate();
   const [showForm, setShowForm] = useState(true);
   function handleForm() {
-    setShowForm(false);
+    setShowForm(!showForm);
+    navigate("/");
+
   }
   return (
     <div>
@@ -27,8 +33,10 @@ function SignUpInitial() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            maxWidth: 500,
-            maxHeight: 500,
+
+            maxWidth: 600,
+            maxHeight: 600,
+
             backgroundColor: "white",
             borderRadius: "10px",
             border: "2px solid lightgrey",
@@ -47,7 +55,9 @@ function SignUpInitial() {
           <UiPart title="Join Twitter today" />
           <div className="hrr">or</div>
 
-         <Link to='/register'><NormalButton name="create account" /></Link> 
+
+         <NavLink to='/register'><NormalButton name="create account" /></NavLink> 
+
           <div>
             <p>
               By signing up, you agree to the<span>Terms of Service</span>

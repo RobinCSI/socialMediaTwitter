@@ -9,9 +9,24 @@ import SignUpInitial from "./pages/signup/SignUpInitial";
 
 
 
+import { FcGoogle } from "react-icons/fc";
+import Buttons from "./components/smallComponents/Button";
+import Sidebar from "./components/sideBar/Sidebar";
+import UserData from "./components/userData/UserData";
+import style from "./pages/home/Home.module.css";
+import TrendingData from "./components/trending/TrendingData";
+import AddingTweet from "./components/addingTweet/AddingTweet";
+import TwitterFeed from "./components/homeTweetCarousel/twitterFeed/TwitterFeed"
+import LandingSidebar from "./components/landingPage/LandingSidebar";
+import RightsideCard from "./components/landingPage/RightsideCard";
+import Navbar from "./pages/navbar/Navbar";
+
+
+
 import Login from "./pages/Login/login";
 import { useRecoilState } from "recoil";
 import { authAtom } from "./recoil/users";
+
 
 function App() {
   const navigate = useNavigate();
@@ -34,12 +49,33 @@ function App() {
 
   return (
     <>
+
+      <div className={style.home}>
+        <div className={style.sidebar}>
+          <LandingSidebar />
+        </div>
+        <div className={style.mainSection}>
+         
+          <div>
+            <TwitterFeed />
+          </div>
+        </div>
+        <div className={style.rightSide}>
+          <div className={style.trendings}>
+           <RightsideCard/>
+          </div>
+          
+        </div>
+        <Navbar/>
+      </div>
       <Routes>
-        <Route path="/" element={<Home />} />
+       <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signup" element={<SignUpInitial />} />
+        <Route path="/register" element={<SignUp/>}/>
       </Routes>
-      
+
     </>
   );
 }

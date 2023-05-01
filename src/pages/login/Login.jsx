@@ -122,8 +122,10 @@ const Login = () => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                maxWidth: 500,
-                maxHeight: 500,
+
+                maxWidth: 600,
+                maxHeight: 600,
+
                 backgroundColor: "white",
                 borderRadius: "10px",
                 border: "2px solid lightgrey",
@@ -222,8 +224,10 @@ const Login = () => {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                maxWidth: 500,
-                maxHeight: 500,
+
+                maxWidth: 600,
+                maxHeight: 600,
+
                 backgroundColor: "white",
                 borderRadius: "10px",
                 border: "2px solid lightgrey",
