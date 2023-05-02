@@ -25,7 +25,7 @@ function Search() {
           color: "initial",
           border: "1px solid #dadce0",
         },}}
-      variant="outlined"><Icons icons={< BiSearch/>}/>Search here</Button>
+      variant="outlined"><Icons icons={< BiSearch/>}/>Search Twitter</Button>
     </div>
   )
 }
