@@ -7,6 +7,7 @@ import style from "./Home.module.css";
 import TrendingData from "../../components/trending/TrendingData";
 import AddingTweet from "./../../components/addingTweet/AddingTweet"
 import TwitterFeed from "./../../components/homeTweetCarousel/twitterFeed/TwitterFeed"
+import Search from "../../components/search/Search";
 
 function Home() {
   return (
@@ -23,6 +24,9 @@ function Home() {
         </div>
       </div>
       <div className={style.rightSide}>
+        <div className={style.search}>
+          <Search/>
+        </div>
         <div className={style.trending}>
           <TrendingData />
         </div>

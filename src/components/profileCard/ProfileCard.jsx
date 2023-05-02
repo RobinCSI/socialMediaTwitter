@@ -15,6 +15,19 @@ export default function ProfileCard() {
   //Importing data from local
   const dataFromLocal = JSON.parse(localStorage.getItem("auth"));
 
+
+  //  useEffect(()=>{
+  //     const dataFromLocal=localStorage.getItem("auth")
+  //     if(dataFromLocal){
+  //       setData(JSON.parse(dataFromLocal))
+  //     }
+  //     else{
+  //       setData([])
+  //     }
+  //  },[])
+  //  console.log(data.auth)
+  
+
   function handleToggle() {
     setShow(!show);
   }
