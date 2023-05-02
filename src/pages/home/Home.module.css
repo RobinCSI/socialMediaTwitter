@@ -52,6 +52,37 @@
   /* bottom: 20; */
   padding-top: 5%;
 }
+
+
+
+.nav{
+  
+   
+  transition:  background-color 0.3s ease-in-out;
+   position: fixed;
+ top: 0;
+ width: 41%;
+
+ height: 53px;
+ background-color: #fff;
+ border-bottom: 1px solid #ddd;
+ z-index: 9999;
+ display: flex;
+ justify-content: space-between;
+   
+}
+.nav.transparent {
+   background-color: transparent;
+ }
+.h222{
+   padding: 2%;
+}
+.ico{
+   padding: 2%;
+   
+   color: black;
+}
+
 @media screen and (max-width: 800px) {
   .rightSide {
     display: none;

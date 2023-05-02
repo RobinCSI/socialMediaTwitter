@@ -9,13 +9,10 @@ export default function TwitterFeed() {
 
   return (
     <div>
-      <ul style={{ listStyleType: "none" }}>
-        {allTweets.map((element, index) => (
-          <li key={element.id}>
-            <Tweet data={element} index={index} dispatch={dispatch} />
-          </li>
-        ))}
-      </ul>
+
+        <ul style={{listStyleType: 'none',position: "relative",
+top: "70px"}}>{allTweets.map((element, index)=><li key={element.id}><Tweet data={element} index={index} dispatch={dispatch}/></li>)}</ul>
+
     </div>
   );
 }

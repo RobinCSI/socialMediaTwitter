@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import {TextField} from "@mui/material"
 import { addTweet } from "../redux/tweetsSlice";
 import { useDispatch } from "react-redux";
 import { v4 as uuid } from "uuid";
@@ -14,6 +14,9 @@ import { CiLocationOn } from "react-icons/ci";
 
 export default function AddingTweet() {
   const [tweet, setTweet] = useState("");
+
+  const [name,setName]=useState("");
+
 
   const dataFromLocal = JSON.parse(localStorage.getItem("auth"));
   console.log(dataFromLocal);
@@ -58,6 +61,7 @@ export default function AddingTweet() {
     const nav = document.querySelector(".nav");
     nav.classList.toggle("transparent", window.scrollY > 0);
   }
+
   return (
     <>
       <div className={style.container}>
@@ -71,6 +75,7 @@ export default function AddingTweet() {
             </span>
 
             <p className={style.userName}>{dataFromLocal.user.name}</p>
+
 
             <div className={style.textarea}>
               <textarea
