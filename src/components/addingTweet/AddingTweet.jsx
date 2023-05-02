@@ -47,6 +47,7 @@ export default function AddingTweet() {
       };
       dispatch(addTweet(newTweet));
       newTweetsToLocal(newTweet)
+      setTweet("")
       
 
     } else alert("Kindly fill all the details");
@@ -89,17 +90,20 @@ export default function AddingTweet() {
                <p>{dataFromLocal.user.email}</p> 
            </div>
 =======*/}
-            <span>
+            {/* <span>
               <img
                 className={style.ProfileImage}
                 src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               />
-            </span>
+            </span> */}
 
-            <p className={style.userName}>{dataFromLocal.user.name}</p>
+            {/* <p className={style.userName}>{dataFromLocal.user.name}</p> */}
 
-
-
+            <div className={style.inputTweet}>
+            <img
+                className={style.ProfileImage}
+                src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              />
             <div className={style.textarea}>
               <textarea
                 onChange={handleNewTweet}
@@ -108,6 +112,7 @@ export default function AddingTweet() {
                 placeholder="What's happening?"
                 className={style.textArea}
               />
+            </div>
             </div>
             <div className={style.lowerPart}>
               <div className={style.emogeStyle}>
