@@ -7,7 +7,7 @@
     border: .5px solid white;
     border-bottom: none;
     gap: 50%;
-    
+    z-index: 9999;
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px)
   }
@@ -28,4 +28,7 @@
     .mainHeading{
       display: flex;
       margin-right: 19rem;
+    }
+    .h33{
+      padding: 3%;
     }
