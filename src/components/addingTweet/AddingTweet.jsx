@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-
+import {TextField} from "@mui/material"
 import { addTweet } from "../redux/tweetsSlice";
 import { useDispatch } from "react-redux";
 import { v4 as uuid } from "uuid";
@@ -73,20 +73,20 @@ export default function AddingTweet() {
     nav.classList.toggle("transparent", window.scrollY > 0);
   }
 
+ 
+     
+
+
+
   return (
     <>
-      <div className={style.nav}>
+
+<div className={style.nav}>
         <h2 className={style.h222}>Explore</h2>
         <span className={style.ico}>
           <Icons icons={<FiSettings className={style.icons} />} />
         </span>
       </div>
-
-
-
-  return (
-    <>
-
       <div className={style.container}>
         <h1>
           <form onSubmit={handleAddTweet}>
@@ -103,7 +103,7 @@ export default function AddingTweet() {
                 placeholder="Name"
                 variant="standard"
               />
-
+</div>
             <div>
               <p>{dataFromLocal.user.name}</p>
               <p>{dataFromLocal.user.email}</p>
