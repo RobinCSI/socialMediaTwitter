@@ -8,7 +8,7 @@ function RightsideCard() {
         sx={{
           backgroundColor: "white",
           border: "2px solid lightgrey",
-          
+          width:350,
           borderRadius: 5,
           // transform: "translate(200%, 180%)",
           margin: 0,

@@ -23,7 +23,7 @@ import { FiSettings } from "react-icons/fi";
 
 export default function AddingTweet() {
   const [tweet, setTweet] = useState("");
-
+  const [name,setName]=useState("");
 
   const dataFromLocal = JSON.parse(localStorage.getItem("auth"));
   console.log(dataFromLocal)
@@ -81,12 +81,6 @@ export default function AddingTweet() {
   return (
     <>
 
-<div className={style.nav}>
-        <h2 className={style.h222}>Explore</h2>
-        <span className={style.ico}>
-          <Icons icons={<FiSettings className={style.icons} />} />
-        </span>
-      </div>
       <div className={style.container}>
         <h1>
           <form onSubmit={handleAddTweet}>
@@ -98,17 +92,18 @@ export default function AddingTweet() {
               <TextField
                 onChange={(e) => setName(e.target.value)}
                 name="name"
-                value={name}
+                value={dataFromLocal.user.name}
                 id="standard-basic"
                 placeholder="Name"
                 variant="standard"
+                disabled
               />
 </div>
-            <div>
+            {/* <div>
               <p>{dataFromLocal.user.name}</p>
               <p>{dataFromLocal.user.email}</p>
 
-            </div>
+            </div> */}
             <div className={style.textarea}>
               <textarea
                 onChange={handleNewTweet}

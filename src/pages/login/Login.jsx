@@ -140,7 +140,7 @@ const Login = () => {
               </button>
 
               <UiPart title="Sign in to Twitter" />
-              <div className="hrr">or</div>
+              <div className={style.hrr}>or</div>
 
               <TextField
                 onChange={(e) => setFirstInput(e.target.value)}
