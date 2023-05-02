@@ -84,3 +84,14 @@
     color: black;
 }
 
+.ProfileImage{
+    height: 2rem;
+    width:2rem ;
+   margin-left: 1rem;
+   border-radius: 50%;
+}
+.userName{
+display: inline;
+margin-left: 1rem;
+font-size:1rem;
+}

@@ -51,13 +51,19 @@ export default function AddingTweet() {
       <div className={style.container}>
         <h1>
           <form onSubmit={handleAddTweet}>
-            <div>
-              <CgProfile />
-            </div>
-            <div>
-              <p>{dataFromLocal.user.name}</p>
-              <p>{dataFromLocal.user.email}</p>
-            </div>
+            <span>
+              {/* <CgProfile /> */}
+              <img 
+              className={style.ProfileImage}
+               src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              />
+            </span>
+           
+              <p
+               className={style.userName}
+              >{dataFromLocal.user.name}</p>
+             
+            
             <div className={style.textarea}>
               <textarea
                 onChange={handleNewTweet}
