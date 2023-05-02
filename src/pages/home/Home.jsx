@@ -8,8 +8,13 @@ import TrendingData from "../../components/trending/TrendingData";
 import AddingTweet from "./../../components/addingTweet/AddingTweet"
 import TwitterFeed from "./../../components/homeTweetCarousel/twitterFeed/TwitterFeed"
 
+
 import { useDispatch} from 'react-redux'
 import { addTweet } from "./../../components/redux/tweetsSlice";
+
+
+import Search from "../../components/search/Search";
+ import HomeNav from "./../homeNavbar/HomeNav"
 
 function Home() {
 
@@ -34,6 +39,10 @@ function Home() {
       </div>
       <div className={style.mainSection}>
         <div>
+           <HomeNav/>
+        </div>
+        <div>
+          
           <AddingTweet />
         </div>
         <div>
@@ -41,6 +50,9 @@ function Home() {
         </div>
       </div>
       <div className={style.rightSide}>
+        <div className={style.search}>
+          <Search/>
+        </div>
         <div className={style.trending}>
           <TrendingData />
         </div>

@@ -11,7 +11,7 @@ function HomeNav() {
       </div>
       <div className={style.lowerContent}>
         <div>
-          <h3>Foryou</h3>
+          <h3>For you</h3>
         </div>
         <div>
           <h3>Following</h3>

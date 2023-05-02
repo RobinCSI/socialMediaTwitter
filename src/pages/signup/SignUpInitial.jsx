@@ -34,8 +34,8 @@ function SignUpInitial() {
             justifyContent: "center",
             alignItems: "center",
 
-            maxWidth: 600,
-            maxHeight: 600,
+            width: 350,
+            height: 350,
 
             backgroundColor: "white",
             borderRadius: "10px",

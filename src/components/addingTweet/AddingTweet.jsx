@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
+import {TextField} from "@mui/material"
 import { addTweet } from "../redux/tweetsSlice";
 import { useDispatch } from "react-redux";
 import { v4 as uuid } from "uuid";
 
 import style from "./AddingTweet.module.css";
 
-import { CgProfile } from "react-icons/cg";
 import { CiImageOn } from "react-icons/ci";
 import { AiOutlineFileGif } from "react-icons/ai";
 import { BiPoll } from "react-icons/bi";
@@ -15,9 +15,13 @@ import { CiLocationOn } from "react-icons/ci";
 export default function AddingTweet() {
   const [tweet, setTweet] = useState("");
 
+  const [name,setName]=useState("");
+
 
   const dataFromLocal = JSON.parse(localStorage.getItem("auth"));
+
   // console.log(dataFromLocal)
+
   const dispatch = useDispatch();
 
   function handleNewTweet(e) {
@@ -27,14 +31,15 @@ export default function AddingTweet() {
   function handleAddTweet(e) {
     e.preventDefault();
 
-   
     if (tweet) {
       let newTweet = {
         id: uuid(),
         content: tweet,
         createdAt: new Date().toJSON(),
         image: "https://picsum.photos/1000/500?q=0",
+
         tweetedBy: { id: uuid(), name: dataFromLocal.user.name },
+
         likeCount: 0,
         commentCount: 0,
         reTweetsCount: 0,
@@ -47,6 +52,7 @@ export default function AddingTweet() {
     } else alert("Kindly fill all the details");
   }
 
+
   function newTweetsToLocal(tweet){
     const alreadyTweeted=JSON.parse(localStorage.getItem("newTweets")) || []
     // console.log(typeof(alreadyTweeted))
@@ -54,6 +60,19 @@ export default function AddingTweet() {
     alreadyTweeted.unshift(tweet)
     // console.log(alreadyTweeted)
     localStorage.setItem("newTweets", JSON.stringify(alreadyTweeted));
+    }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  function handleScroll() {
+    const nav = document.querySelector(".nav");
+    nav.classList.toggle("transparent", window.scrollY > 0);
+
   }
 
   return (
@@ -61,13 +80,26 @@ export default function AddingTweet() {
       <div className={style.container}>
         <h1>
           <form onSubmit={handleAddTweet}>
+{/* PersistNewTweets
             <div>
               <CgProfile />
             </div>
             <div>
               <p>{dataFromLocal.user.name}</p>
-              {/* <p>{dataFromLocal.user.email}</p> */}
-            </div>
+               <p>{dataFromLocal.user.email}</p> 
+           </div>
+=======*/}
+            <span>
+              <img
+                className={style.ProfileImage}
+                src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              />
+            </span>
+
+            <p className={style.userName}>{dataFromLocal.user.name}</p>
+
+
+
             <div className={style.textarea}>
               <textarea
                 onChange={handleNewTweet}

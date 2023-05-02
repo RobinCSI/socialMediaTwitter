@@ -121,8 +121,8 @@ const Login = () => {
                 justifyContent: "center",
                 alignItems: "center",
 
-                maxWidth: 600,
-                maxHeight: 600,
+                width: 400,
+                height: 400,
 
                 backgroundColor: "white",
                 borderRadius: "10px",
@@ -140,7 +140,7 @@ const Login = () => {
               </button>
 
               <UiPart title="Sign in to Twitter" />
-              <div className="hrr">or</div>
+              <div className={style.hrr}>or</div>
 
               <TextField
                 onChange={(e) => setFirstInput(e.target.value)}
@@ -223,8 +223,8 @@ const Login = () => {
                 justifyContent: "center",
                 alignItems: "center",
 
-                maxWidth: 600,
-                maxHeight: 600,
+                width: 350,
+                height: 350,
 
                 backgroundColor: "white",
                 borderRadius: "10px",
@@ -252,7 +252,7 @@ const Login = () => {
               />
 
               <div>
-                <FormControl sx={{ m: 1, width: "25ch" }} variant="filled">
+                <FormControl sx={{ m: 1, width: "38ch" }} variant="filled">
                   <InputLabel htmlFor="filled-adornment-password">
                     Password
                   </InputLabel>
@@ -280,9 +280,25 @@ const Login = () => {
                   variant="contained"
                   type="submit"
                   sx={{
+                    textTransform: "none",
+                    width: 300,
+                    height: 40,
+                    border: "1px solid #dadce0",
                     backgroundColor: "white",
+                    borderRadius: "50px",
                     color: "black",
+                    fontFamily: "Google Sans arial,sans-serif",
+                    fontSize: 20,
+                    letterSpacing: 0.25,
+                    margin: 2,
+  
+                    "&:hover": {
+                      backgroundColor: "initial",
+                      color: "initial",
+                      border: "1px solid #dadce0",
+                    },
                   }}
+                  
                 >
                   Log in
                 </Button>

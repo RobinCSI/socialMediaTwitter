@@ -1,11 +1,12 @@
 .container{
-    width: 17em;
+    width: 12em;
     height: 3em;
     /* border: 1px solid black; */
     display: flex;
     justify-content: space-around;
-    padding: 15px;
+    padding: 10px;
     border-radius: 25em;
+    margin-top: 30%;
 }
 
 .container:hover{
