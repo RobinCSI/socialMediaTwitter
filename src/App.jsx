@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
 import "./App.css";
-import SignUp from "./components/SignUp";
+import SignUp from "./components/SignupComponent/SignUp";
 
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/home/Home";
