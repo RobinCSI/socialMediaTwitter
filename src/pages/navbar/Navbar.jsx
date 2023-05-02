@@ -16,10 +16,10 @@ function Navbar() {
   return (
     <div className={style.navbar}>
       <div className={style.textNavbar}>
-        <p className={style.msg}>
-          <h2>Don’t miss what’s happening</h2>
+        <div className={style.msg}>
+          <h2>Don't miss what's happening</h2>
           People on Twitter are the first to know.
-        </p>
+        </div>
       </div>
 
       <div className={style.yellow}>

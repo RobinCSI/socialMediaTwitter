@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from "react";
+
 import { addTweet } from "../redux/tweetsSlice";
 import { useDispatch } from "react-redux";
 import { v4 as uuid } from "uuid";
@@ -11,15 +13,20 @@ import { AiOutlineFileGif } from "react-icons/ai";
 import { BiPoll } from "react-icons/bi";
 import { BsEmojiSmile } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
-import TextField from "@mui/material/TextField";
+
 
 import { Icon } from "@mui/material";
 import Icons from "../smallComponents/Icons";
 import { FiSettings } from "react-icons/fi";
 
-export default function TwitterFeed() {
+
+
+export default function AddingTweet() {
   const [tweet, setTweet] = useState("");
-  const [name, setName] = useState("");
+
+
+  const dataFromLocal = JSON.parse(localStorage.getItem("auth"));
+  console.log(dataFromLocal)
 
   const dispatch = useDispatch();
 
@@ -30,14 +37,18 @@ export default function TwitterFeed() {
   function handleAddTweet(e) {
     e.preventDefault();
 
-    // console.log("Adding")
-    if (name && tweet) {
+
+   
+    if (tweet) {
+
       let newTweet = {
         id: uuid(),
         content: tweet,
         createdAt: new Date().toJSON(),
         image: "https://picsum.photos/1000/500?q=0",
-        tweetedBy: { id: uuid(), name: name },
+
+        tweetedBy: { id: uuid(), name: dataFromLocal.user.name },
+
         likeCount: 0,
         commentCount: 0,
         reTweetsCount: 0,
@@ -48,6 +59,7 @@ export default function TwitterFeed() {
       setName("");
     } else alert("Kindly fill all the details");
   }
+
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -70,12 +82,18 @@ export default function TwitterFeed() {
         </span>
       </div>
 
+
+
+  return (
+    <>
+
       <div className={style.container}>
         <h1>
           <form onSubmit={handleAddTweet}>
             <div>
               <CgProfile />
             </div>
+
             <div className={style.textField}>
               <TextField
                 onChange={(e) => setName(e.target.value)}
@@ -85,6 +103,11 @@ export default function TwitterFeed() {
                 placeholder="Name"
                 variant="standard"
               />
+
+            <div>
+              <p>{dataFromLocal.user.name}</p>
+              <p>{dataFromLocal.user.email}</p>
+
             </div>
             <div className={style.textarea}>
               <textarea
