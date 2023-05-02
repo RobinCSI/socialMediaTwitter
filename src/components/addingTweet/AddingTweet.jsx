@@ -17,7 +17,7 @@ export default function AddingTweet() {
 
 
   const dataFromLocal = JSON.parse(localStorage.getItem("auth"));
-  console.log(dataFromLocal)
+  // console.log(dataFromLocal)
   const dispatch = useDispatch();
 
   function handleNewTweet(e) {
@@ -41,9 +41,19 @@ export default function AddingTweet() {
         isLiked: false,
       };
       dispatch(addTweet(newTweet));
-      setTweet("");
-      setName("");
+      newTweetsToLocal(newTweet)
+      
+
     } else alert("Kindly fill all the details");
+  }
+
+  function newTweetsToLocal(tweet){
+    const alreadyTweeted=JSON.parse(localStorage.getItem("newTweets")) || []
+    // console.log(typeof(alreadyTweeted))
+
+    alreadyTweeted.unshift(tweet)
+    // console.log(alreadyTweeted)
+    localStorage.setItem("newTweets", JSON.stringify(alreadyTweeted));
   }
 
   return (
@@ -56,7 +66,7 @@ export default function AddingTweet() {
             </div>
             <div>
               <p>{dataFromLocal.user.name}</p>
-              <p>{dataFromLocal.user.email}</p>
+              {/* <p>{dataFromLocal.user.email}</p> */}
             </div>
             <div className={style.textarea}>
               <textarea
