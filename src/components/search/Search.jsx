@@ -27,7 +27,9 @@ function Search() {
           color: "initial",
           border: "1px solid #dadce0",
         },}}
+
       variant="outlined"><Icons icons={< BiSearch className={style.iconss}/>}/>Search Twitter</Button>
+
     </div>
   )
 }

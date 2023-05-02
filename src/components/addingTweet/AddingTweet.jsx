@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import {TextField} from "@mui/material"
 import { addTweet } from "../redux/tweetsSlice";
@@ -7,26 +6,20 @@ import { v4 as uuid } from "uuid";
 
 import style from "./AddingTweet.module.css";
 
-import { CgProfile } from "react-icons/cg";
 import { CiImageOn } from "react-icons/ci";
 import { AiOutlineFileGif } from "react-icons/ai";
 import { BiPoll } from "react-icons/bi";
 import { BsEmojiSmile } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 
-
-import { Icon } from "@mui/material";
-import Icons from "../smallComponents/Icons";
-import { FiSettings } from "react-icons/fi";
-
-
-
 export default function AddingTweet() {
   const [tweet, setTweet] = useState("");
+
   const [name,setName]=useState("");
 
+
   const dataFromLocal = JSON.parse(localStorage.getItem("auth"));
-  console.log(dataFromLocal)
+  console.log(dataFromLocal);
 
   const dispatch = useDispatch();
 
@@ -37,10 +30,7 @@ export default function AddingTweet() {
   function handleAddTweet(e) {
     e.preventDefault();
 
-
-   
     if (tweet) {
-
       let newTweet = {
         id: uuid(),
         content: tweet,
@@ -60,7 +50,6 @@ export default function AddingTweet() {
     } else alert("Kindly fill all the details");
   }
 
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -73,37 +62,21 @@ export default function AddingTweet() {
     nav.classList.toggle("transparent", window.scrollY > 0);
   }
 
- 
-     
-
-
-
   return (
     <>
-
       <div className={style.container}>
         <h1>
           <form onSubmit={handleAddTweet}>
-            <div>
-              <CgProfile />
-            </div>
-
-            <div className={style.textField}>
-              <TextField
-                onChange={(e) => setName(e.target.value)}
-                name="name"
-                value={dataFromLocal.user.name}
-                id="standard-basic"
-                placeholder="Name"
-                variant="standard"
-                disabled
+            <span>
+              <img
+                className={style.ProfileImage}
+                src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               />
-</div>
-            {/* <div>
-              <p>{dataFromLocal.user.name}</p>
-              <p>{dataFromLocal.user.email}</p>
+            </span>
 
-            </div> */}
+            <p className={style.userName}>{dataFromLocal.user.name}</p>
+
+
             <div className={style.textarea}>
               <textarea
                 onChange={handleNewTweet}
