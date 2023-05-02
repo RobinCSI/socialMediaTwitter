@@ -1,25 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 import { addTweet } from "../redux/tweetsSlice";
 import { useDispatch } from "react-redux";
 import { v4 as uuid } from "uuid";
 
 import style from "./AddingTweet.module.css";
 
-import { CgProfile } from "react-icons/cg";
 import { CiImageOn } from "react-icons/ci";
 import { AiOutlineFileGif } from "react-icons/ai";
 import { BiPoll } from "react-icons/bi";
 import { BsEmojiSmile } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
-import TextField from "@mui/material/TextField";
 
-import { Icon } from "@mui/material";
-import Icons from "../smallComponents/Icons";
-import { FiSettings } from "react-icons/fi";
-
-export default function TwitterFeed() {
+export default function AddingTweet() {
   const [tweet, setTweet] = useState("");
-  const [name, setName] = useState("");
+
+  const dataFromLocal = JSON.parse(localStorage.getItem("auth"));
+  console.log(dataFromLocal);
 
   const dispatch = useDispatch();
 
@@ -30,14 +27,15 @@ export default function TwitterFeed() {
   function handleAddTweet(e) {
     e.preventDefault();
 
-    // console.log("Adding")
-    if (name && tweet) {
+    if (tweet) {
       let newTweet = {
         id: uuid(),
         content: tweet,
         createdAt: new Date().toJSON(),
         image: "https://picsum.photos/1000/500?q=0",
-        tweetedBy: { id: uuid(), name: name },
+
+        tweetedBy: { id: uuid(), name: dataFromLocal.user.name },
+
         likeCount: 0,
         commentCount: 0,
         reTweetsCount: 0,
@@ -49,32 +47,31 @@ export default function TwitterFeed() {
     } else alert("Kindly fill all the details");
   }
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  function handleScroll() {
+    const nav = document.querySelector(".nav");
+    nav.classList.toggle("transparent", window.scrollY > 0);
+  }
   return (
     <>
-      {/* <div className={style.nav}>
-<h2 className={style.h222}>Explore</h2>
-<span className={style.ico}>
-<Icons  icons={<FiSettings className={style.icons} />} />
-</span>
-
-    </div> */}
-
       <div className={style.container}>
         <h1>
           <form onSubmit={handleAddTweet}>
-            <div>
-              <CgProfile />
-            </div>
-            <div className={style.textField}>
-              <TextField
-                onChange={(e) => setName(e.target.value)}
-                name="name"
-                value={name}
-                id="standard-basic"
-                placeholder="Name"
-                variant="standard"
+            <span>
+              <img
+                className={style.ProfileImage}
+                src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               />
-            </div>
+            </span>
+
+            <p className={style.userName}>{dataFromLocal.user.name}</p>
+
             <div className={style.textarea}>
               <textarea
                 onChange={handleNewTweet}

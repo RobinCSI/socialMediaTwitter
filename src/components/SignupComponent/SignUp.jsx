@@ -4,9 +4,9 @@ import Styles from "./SignUp.module.css";
 
 import style from "./Signup.module.css";
 import { ImCross } from "react-icons/im";
-import Icons from "./smallComponents/Icons";
-import { authAtom } from "../recoil/users";
+import { authAtom } from "../../recoil/users";
 import { useRecoilState } from "recoil";
+import Icons from "../smallComponents/Icons";
 
 import {
   Alert,
@@ -23,7 +23,7 @@ import { Button } from "@mui/base";
 import { func } from "prop-types";
 import { useNavigate } from "react-router-dom";
 
-import Navbar from "./../pages/navbar/Navbar";
+import Navbar from "../../pages/navbar/Navbar";
 
 export default function SignUp() {
   const [showForm, setShowForm] = useState(true);
@@ -106,6 +106,10 @@ export default function SignUp() {
       });
       window.alert('Welcome!!')
       navigate("/");
+
+
+      navigate("/login");
+
     }
   }, [errors]);
 
@@ -175,6 +179,7 @@ export default function SignUp() {
         <button onClick={handleForm}>
           <Icons icons={<ImCross className={Styles.cross} />} />
         </button>
+
 
         <FormControl type="submit">
           <h2

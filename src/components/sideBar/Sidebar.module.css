@@ -6,8 +6,12 @@
   margin: 3%;
   /* transform: translate(60%,5%); */
   /* box-shadow: 0px 0px 10px 5px rgba(128, 128, 128, 0.5); */
-position: fixed;
+
   justify-content: left;
+  
+  position: relative;
+  top: 0%;
+  left: 50%;
 }
 .iconss {
   font-size: 20px;
