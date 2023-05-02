@@ -5,6 +5,8 @@ import Styles from "./SignUp.module.css";
 import style from "./Signup.module.css";
 import { ImCross } from "react-icons/im";
 import Icons from "./smallComponents/Icons";
+import { authAtom } from "../recoil/users";
+import { useRecoilState } from "recoil";
 
 import {
   Alert,
@@ -67,6 +69,7 @@ export default function SignUp() {
   const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
   const [data, setData] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useRecoilState(authAtom);
   // const [open, setOpen] = useState(false);
 
   function handlechange(e) {
@@ -93,8 +96,16 @@ export default function SignUp() {
     if (Object.keys(errors).length === 0 && isSubmit) {
       localStorage.setItem("users", JSON.stringify([...data, details]));
       setDetails(initialData);
-
-      navigate("/login");
+      setIsLoggedIn({
+        isLoggedIn: true,
+        user: {
+          name: details.username,
+          email: details.email,
+          number: details.number,
+        },
+      });
+      window.alert('Welcome!!')
+      navigate("/");
     }
   }, [errors]);
 
@@ -162,11 +173,8 @@ export default function SignUp() {
         }}
       >
         <button onClick={handleForm}>
-
-            <Icons icons={<ImCross className={Styles.cross} />} />
-          </button>
-
-        
+          <Icons icons={<ImCross className={Styles.cross} />} />
+        </button>
 
         <FormControl type="submit">
           <h2
@@ -288,8 +296,12 @@ export default function SignUp() {
               label="Years"
               select
             >
-              {years.map((year,index) => {
-                return <MenuItem key={index} value={year}>{year}</MenuItem>;
+              {years.map((year, index) => {
+                return (
+                  <MenuItem key={index} value={year}>
+                    {year}
+                  </MenuItem>
+                );
               })}
             </TextField>
             <TextField
@@ -300,7 +312,7 @@ export default function SignUp() {
               label="Day"
               select
             >
-              {days.map((day,index) => {
+              {days.map((day, index) => {
                 return (
                   <MenuItem key={index} value={day}>
                     {day}
@@ -321,7 +333,7 @@ export default function SignUp() {
             }}
             onClick={handleSubmit}
           >
-            Next
+            Submit
           </Button>
         </FormControl>
       </Box>
