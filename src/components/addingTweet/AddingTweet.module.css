@@ -4,7 +4,7 @@
     height: 30vh;
     border: 1px solid #CAD5E2;
 
-   
+   padding-top: 60px;
     /* align-items: center;
     justify-content: center; */
 
@@ -58,9 +58,9 @@
 
 
 .nav{
-    border: 1px solid red;
+  
    
-   
+   transition:  background-color 0.3s ease-in-out;
     position: fixed;
   top: 0;
   width: 41%;
@@ -73,12 +73,15 @@
   justify-content: space-between;
     
 }
+.nav.transparent {
+    background-color: transparent;
+  }
 .h222{
     padding: 2%;
 }
 .ico{
     padding: 2%;
-    border: 1px solid blue;
+    
     color: black;
 }
 
