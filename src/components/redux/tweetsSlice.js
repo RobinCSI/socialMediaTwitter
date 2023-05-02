@@ -24,8 +24,27 @@ export const tweetsSlice = createSlice({
   initialState,
   reducers: {
     addTweet: (state, action) => {
+      // console.log(action.payload)
+      // const localData=JSON.parse(localStorage.getItem("newTweets"))
+      // console.log((state.value.filter(element=>element.id==action.payload.id)))
+      // console.log(typeof(state.value[0].id))
+      // console.log(typeof(action.payload.id))
+      // console.log(state.value[0].id==action.payload.id)
+      const match=state.value.filter(element=>element.id==action.payload.id)
+      if(match.length==0){
       state.value.unshift(action.payload);
+      }
+      // console.log(state.value)
+      
     },
+    // addTweet: (state, action) => {
+    //   // console.log(action.payload)
+    //   // state.value.unshift(action.payload);
+    // }, prepare(...arguments){
+    //   return{
+    //     payload: arguments
+    //   }
+    // },
     updateImpression: (state, action)=>{
       const {index, impression, isRetweeted}=action.payload
       let updatedTweet={}

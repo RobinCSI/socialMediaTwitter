@@ -19,7 +19,8 @@ export default function AddingTweet() {
 
 
   const dataFromLocal = JSON.parse(localStorage.getItem("auth"));
-  console.log(dataFromLocal);
+
+  // console.log(dataFromLocal)
 
   const dispatch = useDispatch();
 
@@ -45,10 +46,22 @@ export default function AddingTweet() {
         isLiked: false,
       };
       dispatch(addTweet(newTweet));
-      setTweet("");
-      setName("");
+      newTweetsToLocal(newTweet)
+      setTweet("")
+      
+
     } else alert("Kindly fill all the details");
   }
+
+
+  function newTweetsToLocal(tweet){
+    const alreadyTweeted=JSON.parse(localStorage.getItem("newTweets")) || []
+    // console.log(typeof(alreadyTweeted))
+
+    alreadyTweeted.unshift(tweet)
+    // console.log(alreadyTweeted)
+    localStorage.setItem("newTweets", JSON.stringify(alreadyTweeted));
+    }
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -60,6 +73,7 @@ export default function AddingTweet() {
   function handleScroll() {
     const nav = document.querySelector(".nav");
     nav.classList.toggle("transparent", window.scrollY > 0);
+
   }
 
   return (
@@ -67,16 +81,29 @@ export default function AddingTweet() {
       <div className={style.container}>
         <h1>
           <form onSubmit={handleAddTweet}>
-            <span>
+{/* PersistNewTweets
+            <div>
+              <CgProfile />
+            </div>
+            <div>
+              <p>{dataFromLocal.user.name}</p>
+               <p>{dataFromLocal.user.email}</p> 
+           </div>
+=======*/}
+            {/* <span>
               <img
                 className={style.ProfileImage}
                 src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               />
-            </span>
+            </span> */}
 
-            <p className={style.userName}>{dataFromLocal.user.name}</p>
+            {/* <p className={style.userName}>{dataFromLocal.user.name}</p> */}
 
-
+            <div className={style.inputTweet}>
+            <img
+                className={style.ProfileImage}
+                src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              />
             <div className={style.textarea}>
               <textarea
                 onChange={handleNewTweet}
@@ -85,6 +112,7 @@ export default function AddingTweet() {
                 placeholder="What's happening?"
                 className={style.textArea}
               />
+            </div>
             </div>
             <div className={style.lowerPart}>
               <div className={style.emogeStyle}>
