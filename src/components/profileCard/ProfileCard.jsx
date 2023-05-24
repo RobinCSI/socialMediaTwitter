@@ -71,8 +71,8 @@ export default function ProfileCard() {
       <div   onClick={handleToggle} className={styles.container}>
         <CgProfile className={styles.profileIcon} />
         <div className={styles.name}>
-          <h3>{dataFromLocal.user.name}</h3>
-          <h4>{dataFromLocal.user.email}</h4>
+          <h3>{dataFromLocal?.user.name}</h3>
+          <h4>{dataFromLocal?.user.email}</h4>
         </div>
         <BsThreeDots    />
       </div>

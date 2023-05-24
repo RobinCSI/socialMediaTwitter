@@ -1,12 +1,12 @@
 import React from 'react'
-import Navbar from './navbar/Navbar';
-import LandingSidebar from '../components/landingPage/LandingSidebar';
-import TwitterFeed from '../components/homeTweetCarousel/twitterFeed/TwitterFeed';
-import RightsideCard from '../components/landingPage/RightsideCard';
-import style from "./home/Home.module.css";
+import Navbar from '../navbar/Navbar';
+import LandingSidebar from '../../components/landingPage/LandingSidebar';
+import TwitterFeed from '../../components/homeTweetCarousel/twitterFeed/TwitterFeed';
+import RightsideCard from '../../components/landingPage/RightsideCard';
+import style from "./LandingPage.module.css";
 
 import { Icon } from "@mui/material";
-import Icons from "../components/smallComponents/Icons";
+import Icons from "../../components/smallComponents/Icons";
 import { FiSettings } from "react-icons/fi";
 
 function LandingPa() {

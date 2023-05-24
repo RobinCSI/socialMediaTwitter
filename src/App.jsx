@@ -20,7 +20,7 @@ import TwitterFeed from "./components/homeTweetCarousel/twitterFeed/TwitterFeed"
 import LandingSidebar from "./components/landingPage/LandingSidebar";
 import RightsideCard from "./components/landingPage/RightsideCard";
 import Navbar from "./pages/navbar/Navbar";
-import LandingPa from "./pages/LandingPa";
+import LandingPa from "./pages/landingPage/LandingPage";
 
 
 
