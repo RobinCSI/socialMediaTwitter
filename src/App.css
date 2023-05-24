@@ -1,0 +1,21 @@
+
+/* #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */
+
+
+*{
+  margin: 0;
+  padding: 0;
+
+
+}
+body{
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  overflow-x: hidden;
+}

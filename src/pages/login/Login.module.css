@@ -1,0 +1,18 @@
+
+
+.heading{
+    color: black;
+}
+.icon{
+    color:blue;
+    font-size: 2rem;
+}
+
+.cross {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  .hrr{
+    padding: 3%;
+  }

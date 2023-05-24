@@ -1,0 +1,42 @@
+.icon {
+    color: rgb(29, 155, 240);
+    height: 30px;
+    width: 30px;
+    margin-top: -150px;
+    text-align: center;
+    margin-left: 140px;
+  }
+  .text {
+    color: black;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .google {
+    height: 20px;
+    width: 20px;
+    margin-right: 3%;
+  }
+
+  .h2Text{
+    margin: 2%;
+
+  }
+  .h4Text{
+    margin: 2%;
+    color: #536471;
+    opacity: 0.8;
+    display: block;
+  }
+  .pText{
+    margin: 3%;
+    color: #536471;
+    opacity: 0.8;
+  }
+  .landing{
+    display: flex;
+    flex-direction: column;
+    padding: 0%;
+  }
+

@@ -1,0 +1,43 @@
+.main li{
+    list-style: none;
+}
+
+.image{
+    border-radius: 20px;
+    /* position: absolute;
+    right: 0;
+    top: 0; */
+    padding: 3%;
+}
+.trend{
+   
+    padding: 4%;
+}
+.h33{
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+.heading{
+    font-size: 1.5em;
+    padding: 3%;
+}
+.imageDiv{
+display: flex;
+justify-content: space-between;
+}
+.p{
+    text-align: center;
+    justify-content: center;
+    padding: 8%;
+    font-size: 1em;
+    font-weight: 800;
+}
+.dot{
+    color: "#536471";
+    cursor: none;
+    text-decoration: none;
+
+}

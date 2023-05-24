@@ -1,0 +1,33 @@
+.container{
+    width: 12em;
+    height: 3em;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 25em;
+    margin-top: 15%;
+}
+
+.container:hover{
+    background-color: rgb(227, 231, 236);
+    cursor: pointer;
+}
+
+.profileIcon{
+    font-size: 3em;
+}
+
+.dots{
+    cursor: pointer;
+    margin: 10px;
+}
+
+.logoutCon h3{
+    text-align: left;
+    cursor: pointer;
+}
+
+.logouth3{
+    margin-top: 7px;
+}
