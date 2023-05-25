@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import Styles from "./SignUp.module.css";
 
-import style from "./Signup.module.css";
+// import style from "./Signup.module.css";
 import { ImCross } from "react-icons/im";
 import { authAtom } from "../../recoil/users";
 import { useRecoilState } from "recoil";
@@ -288,8 +288,8 @@ export default function SignUp() {
               label="Month"
               select
             >
-              {months.map((month) => {
-                return <MenuItem value={month}>{month}</MenuItem>;
+              {months.map((month, index) => {
+                return <MenuItem key={index} value={month}>{month}</MenuItem>;
               })}
             </TextField>
             <TextField

@@ -47,15 +47,16 @@ export default function ProfileCard() {
       {show ? (
         <Box
           sx={{
-            width: 200,
+            width: 170,
             height: 35,
             backgroundColor: "white",
             borderRadius: 5,
             borderColor: "black",
-            margin: 2,
-            padding: "2rem",
+            margin: 1,
+            padding: "1rem",
             textAlign: "center",
             border: "1px solid #dadce0",
+            zIndex:10
           }}
         >
           <div className={styles.logoutCon}>
@@ -71,8 +72,8 @@ export default function ProfileCard() {
       <div   onClick={handleToggle} className={styles.container}>
         <CgProfile className={styles.profileIcon} />
         <div className={styles.name}>
-          <h3>{dataFromLocal?.user.name}</h3>
-          <h4>{dataFromLocal?.user.email}</h4>
+          <h3>{dataFromLocal?.user?.name}</h3>
+          <h4>{dataFromLocal?.user?.email}</h4>
         </div>
         <BsThreeDots    />
       </div>
