@@ -20,16 +20,16 @@ function Home() {
 
   const dispatch=useDispatch()
 
-  useEffect(()=>{
-    const localData=JSON.parse(localStorage.getItem("newTweets"))
-    if(localData){
-      const localTweets=localData
-    // console.log(localTweets)
-    const len=localTweets.length
-    for(let i=len-1;i>=0;i--){
-    dispatch(addTweet(localTweets[i]))
-    }
-    }},[])
+  // useEffect(()=>{
+  //   const localData=JSON.parse(localStorage.getItem("newTweets"))
+  //   if(localData){
+  //     const localTweets=localData
+  //   // console.log(localTweets)
+  //   const len=localTweets.length
+  //   for(let i=len-1;i>=0;i--){
+  //   dispatch(addTweet(localTweets[i]))
+  //   }
+  //   }},[])
 
 
   return (

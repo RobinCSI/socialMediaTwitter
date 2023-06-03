@@ -46,7 +46,7 @@ export default function AddingTweet() {
         isLiked: false,
       };
       dispatch(addTweet(newTweet));
-      newTweetsToLocal(newTweet)
+      // newTweetsToLocal(newTweet)
       setTweet("")
       
 
@@ -54,14 +54,14 @@ export default function AddingTweet() {
   }
 
 
-  function newTweetsToLocal(tweet){
-    const alreadyTweeted=JSON.parse(localStorage.getItem("newTweets")) || []
-    // console.log(typeof(alreadyTweeted))
+  // function newTweetsToLocal(tweet){
+  //   const alreadyTweeted=JSON.parse(localStorage.getItem("newTweets")) || []
+  //   // console.log(typeof(alreadyTweeted))
 
-    alreadyTweeted.unshift(tweet)
-    // console.log(alreadyTweeted)
-    localStorage.setItem("newTweets", JSON.stringify(alreadyTweeted));
-    }
+  //   alreadyTweeted.unshift(tweet)
+  //   // console.log(alreadyTweeted)
+  //   localStorage.setItem("newTweets", JSON.stringify(alreadyTweeted));
+  //   }
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
