@@ -3,6 +3,7 @@
   justify-content: flex-start;
   margin: 3%;
   padding: 4%;
+  width: 10rem;
 }
 .menu:hover {
   background-color: #bdc3c7;
